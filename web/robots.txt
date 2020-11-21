@@ -1,0 +1,3 @@
+Sitemap: https://universoflutter.com/sitemap.xml
+User-agent: *
+Crawl-delay: 60

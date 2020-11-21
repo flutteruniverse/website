@@ -1,0 +1,18 @@
+name: website
+description: A website to news and podcast about Flutter
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^1.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter: null
