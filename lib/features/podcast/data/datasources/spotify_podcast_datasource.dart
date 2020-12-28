@@ -1,4 +1,4 @@
-import '../../../core/services/spotify_service.dart';
+import '../../../../core/services/spotify_service.dart';
 import '../models/episode_model.dart';
 import 'podcast_datasource.dart';
 
