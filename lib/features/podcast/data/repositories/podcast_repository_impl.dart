@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../domain/entities/episode.dart';
 import '../../domain/repositories/podcast_repository.dart';
 import '../datasources/podcast_datasource.dart';
+import '../models/episode_model.dart';
+import '../models/episode_references_model.dart';
+import '../models/podcast_info_model.dart';
 
 class PodcastRepositoryImpl implements PodcastRepository {
   final PodcastDatasource _datasource;
@@ -10,7 +12,7 @@ class PodcastRepositoryImpl implements PodcastRepository {
   PodcastRepositoryImpl(this._datasource);
 
   @override
-  Future<List<Episode>> getEpisodes(String showId) async {
+  Future<List<EpisodeModel>> getEpisodes(String showId) async {
     try {
       return await _datasource.getEpisodes(showId);
     } on Exception catch (e) {
@@ -19,7 +21,22 @@ class PodcastRepositoryImpl implements PodcastRepository {
   }
 
   @override
-  Future<void> getInfo(String showId) {
-    throw UnimplementedError();
+  Future<List<EpisodeReferencesModel>> getEpisodesReferences(
+      String location) async {
+    try {
+      return await _datasource.getEpisodesReferences(location);
+    } on Exception catch (e) {
+      throw ErrorDescription(
+          'Error to get episodes references from datasource: $e');
+    }
+  }
+
+  @override
+  Future<PodcastInfoModel> getPodcastInfo(String showId) async {
+    try {
+      return await _datasource.getPodcastInfo(showId);
+    } on Exception catch (e) {
+      throw ErrorDescription('Error to get podcast info from datasource: $e');
+    }
   }
 }
