@@ -10,8 +10,12 @@ dependencies:
     sdk: flutter
   flutter_alien: ^0.1.1
   google_fonts: ^1.1.1
+  graphx: ^0.9.3
   sizer: ^1.1.8
   spotify: ^0.4.0
+
+dependency_overrides:
+  xml: ^4.5.0
 
 dev_dependencies:
   flutter_test:
