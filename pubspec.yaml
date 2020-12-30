@@ -1,6 +1,6 @@
 name: website
 description: A website to news and podcast about Flutter
-version: 0.1.0+1
+version: 0.1.1+2
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
