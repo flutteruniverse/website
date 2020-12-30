@@ -9,6 +9,7 @@
 .history
 .svn/
 .firebase/
+lib/config/env.dart
 
 # IntelliJ related
 *.iml
@@ -35,6 +36,8 @@ pubspec.lock
 
 # Web related
 lib/generated_plugin_registrant.dart
+package-lock.json
+node_modules/*
 
 # Symbolication related
 app.*.symbols

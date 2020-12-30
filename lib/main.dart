@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:graphx/graphx.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: GoogleFonts.latoTextTheme(
-          Theme.of(context).textTheme,
+          Theme.of(context).textTheme.copyWith(
+                headline2: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+                headline3: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                ),
+              ),
         ),
       ),
       home: HomePage(),
@@ -23,28 +33,38 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          Image.network(
-            'https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            fit: BoxFit.cover,
+          SceneBuilderWidget(
+            builder: () => SceneController(back: Background()),
           ),
           Center(
-            child: Container(
-              padding: EdgeInsets.all(8),
-              child: Text(
-                'Coming soon',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 72,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300,
-                ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Coming soon...\n',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline2,
+                  ),
+                  Text(
+                    'You can follow updates in Twitter and Telegram',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                  Text(
+                    '@universoflutter',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.headline3.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -52,5 +72,55 @@ class HomePage extends StatelessWidget {
         fit: StackFit.expand,
       ),
     );
+  }
+}
+
+class Background extends Sprite {
+  double get sw => stage.stageWidth;
+  double get sh => stage.stageHeight;
+
+  @override
+  void addedToStage() {
+    stage.color = 0xff212121;
+    stage.maskBounds = true;
+    _buildStars();
+  }
+
+  void _buildStars() {
+    var bigSize = sw >= sh ? sw : sh;
+    var bg = Shape();
+    addChild(bg);
+    final g = bg.graphics;
+    g.beginFill(0x0).drawCircle(sw / 2, sh / 2, bigSize).endFill();
+
+    /// generate stars
+    List.generate(bigSize.toInt() * 2, (index) {
+      var tx = GameUtils.rndRange(0, bigSize * 2);
+      var ty = GameUtils.rndRange(0, bigSize * 2);
+      var tr = GameUtils.rndRange(1, 3);
+
+      /// random blue shade
+      final blue = GameUtils.rndRangeInt(125, 255);
+      final color = Color.fromARGB(255, blue, blue, 255);
+      g.beginFill(color.value, GameUtils.rndRange(.25, 1));
+      g.drawStar(tx, ty, 8, tr);
+      g.endFill();
+    });
+
+    /// tween animation
+    void _twnBg() {
+      bg.tween(
+        duration: 8,
+        scale: bg.scale < 1 ? 1.2 : 1,
+        rotation: '.4',
+        skewX: GameUtils.rndRange(-.1, .1),
+        ease: GEase.linear,
+        onComplete: _twnBg,
+      );
+    }
+
+    bg.alignPivot();
+    bg.setPosition(sw / 2, sh / 2);
+    _twnBg();
   }
 }
