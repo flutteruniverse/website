@@ -1,22 +1,23 @@
 {
-    "name": "website",
-    "short_name": "website",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#0175C2",
+    "name": "Universo Flutter | To find news and knowledge about Flutter",
+    "short_name": "Universo Flutter",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "minimal-ui",
+    "background_color": "#212121",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Universo Flutter | A website to find news and knowledge about Flutter, through podcast, articles, videos, releases and more",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
+            "src": "icons/favicon-16x16.png",
+            "sizes": "16x16",
             "type": "image/png"
         },
         {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
+            "src": "icons/favicon-32x32.png",
+            "sizes": "32x32",
             "type": "image/png"
         }
     ]
