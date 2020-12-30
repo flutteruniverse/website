@@ -21,6 +21,11 @@ jobs:
         channel: 'beta'
     - name: get flutter dependencies
       run: flutter pub get
+    - name: Generate env file
+      env:
+        SPOTIFY_ID: ${{ secrets.SPOTIFY_ID }}
+        SPOTIFY_SECRET: ${{ secrets.SPOTIFY_SECRET }}
+      run: dart run .tool/env_service.dart
     - name: get node dependencies
       run: npm install
     - name: enable flutter web
