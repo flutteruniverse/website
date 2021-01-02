@@ -33,29 +33,28 @@ class OnlinePodcastDatasource implements PodcastDatasource {
     }
   }
 
-  // TODO: Apply firebase service
   @override
   Future<List<EpisodeReferencesModel>> getEpisodesReferences(
       String location) async {
     try {
-      return await [
-        EpisodeReferencesModel(
-          episode: 1,
-          references: [],
-          season: 1,
-        )
-      ];
+      final episodeDocuments = await _firebaseService.getAllDocuments(location);
+      return episodeDocuments
+          .map((e) => EpisodeReferencesModel.fromMap(e.data()))
+          .toList();
     } on Exception catch (e) {
       throw UnimplementedError('Error to get episode references: $e');
     }
   }
 
-  // TODO: Apply firebase service
   @override
-  Future<PodcastInfoModel> getPodcastInfo(String showId) async {
+  Future<PodcastInfoModel> getPodcastInfo(String location) async {
     try {
+      final streamingServiceDocuments =
+          await _firebaseService.getAllDocuments(location);
       return PodcastInfoModel(
-        platforms: [],
+        streamingServices: streamingServiceDocuments
+            .map((e) => StreamingServiceModel.fromMap(e.data()))
+            .toList(),
       );
     } on Exception catch (e) {
       throw UnimplementedError('Error to get podcast info: $e');

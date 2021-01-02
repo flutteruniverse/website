@@ -8,6 +8,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.14.4
+  firebase_core: ^0.5.3
   flutter_alien: ^0.1.1
   google_fonts: ^1.1.1
   graphx: ^0.9.3

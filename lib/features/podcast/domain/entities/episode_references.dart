@@ -1,7 +1,7 @@
 class EpisodeReferences {
-  final int episode;
-  final int season;
-  final List<References> references;
+  int episode;
+  int season;
+  List<ReferenceDetails> references;
 
   EpisodeReferences({
     this.episode,
@@ -10,27 +10,15 @@ class EpisodeReferences {
   });
 }
 
-class References {
-  final int id;
-  final Reference reference;
+class ReferenceDetails {
+  String link;
+  String type;
+  String title;
 
-  References({
-    this.id,
-    this.reference,
-  });
-}
-
-class Reference {
-  final String link;
-  final TypeReference type;
-  final String title;
-  final List<String> tags;
-
-  Reference({
+  ReferenceDetails({
     this.link,
     this.type,
     this.title,
-    this.tags,
   });
 }
 
@@ -40,7 +28,7 @@ enum TypeReference {
   package,
   tip,
   knowledgeSource,
-  bugsDebugs,
-  jobs,
-  apps,
+  bugDebug,
+  job,
+  app,
 }

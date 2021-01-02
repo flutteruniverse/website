@@ -12,7 +12,7 @@ class GetInfoImpl implements GetInfo {
   GetInfoImpl(this.repository);
 
   @override
-  Future<PodcastInfo> call(String showId) async {
-    return await repository.getPodcastInfo(showId);
+  Future<PodcastInfo> call(String location) async {
+    return await repository.getPodcastInfo(location);
   }
 }

@@ -32,9 +32,9 @@ class PodcastRepositoryImpl implements PodcastRepository {
   }
 
   @override
-  Future<PodcastInfoModel> getPodcastInfo(String showId) async {
+  Future<PodcastInfoModel> getPodcastInfo(String location) async {
     try {
-      return await _datasource.getPodcastInfo(showId);
+      return await _datasource.getPodcastInfo(location);
     } on Exception catch (e) {
       throw ErrorDescription('Error to get podcast info from datasource: $e');
     }
