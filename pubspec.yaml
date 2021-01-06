@@ -1,6 +1,7 @@
 name: website
 description: A website to news and podcast about Flutter
 version: 0.1.2+3
+publish_to: none
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -12,6 +13,8 @@ dependencies:
   cloud_firestore: ^0.14.4
   firebase_core: ^0.5.3
   flutter_alien: ^0.1.1
+  flutter_boxicons:
+    git: https://github.com/flutteruniverse/flutter_boxicons.git
   google_fonts: ^1.1.1
   graphx: ^0.9.3
   intl: ^0.16.1

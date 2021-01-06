@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import 'core/router/router.dart';
 
@@ -11,12 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
 
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: true,
-      title: 'Universo Flutter | Debug',
-      routerDelegate: appRouter.delegate(),
-      routeInformationParser: appRouter.defaultRouteParser(),
-      builder: (context, child) => child,
+    return LayoutBuilder(
+      builder: (context, constraints) => OrientationBuilder(
+        builder: (context, orientation) {
+          SizerUtil().init(constraints, orientation);
+          return MaterialApp.router(
+            debugShowCheckedModeBanner: true,
+            title: 'Universo Flutter | Debug',
+            routerDelegate: appRouter.delegate(),
+            routeInformationParser: appRouter.defaultRouteParser(),
+            builder: (context, child) => child,
+          );
+        },
+      ),
     );
   }
 }
