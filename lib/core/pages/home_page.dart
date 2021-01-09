@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boxicons/flutter_boxicons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../router/router.dart';
@@ -44,7 +43,7 @@ class LargeLayout extends StatelessWidget {
   final _sideMenuItems = const <SideMenuItem>[
     SideMenuItem(
       destination: SettingsRoute(),
-      iconData: Boxicons.bx_slider,
+      iconData: Icons.settings,
       label: 'Settings',
     )
   ];
