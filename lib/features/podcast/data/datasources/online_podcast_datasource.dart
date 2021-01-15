@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:spotify/spotify.dart';
 
 import '../../../../core/services/firebase_service.dart';
@@ -6,6 +7,7 @@ import '../models/episode_references_model.dart';
 import '../models/podcast_info_model.dart';
 import 'podcast_datasource.dart';
 
+@Injectable(as: PodcastDatasource)
 class OnlinePodcastDatasource implements PodcastDatasource {
   final SpotifyApiBase _spotifyService;
   final FirebaseService _firebaseService;

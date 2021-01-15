@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter_alien/flutter_alien.dart';
+import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 
 import '../models/news_model.dart';
 import 'news_datasource.dart';
 
+@Injectable(as: NewsDatasource)
 class OnlineNewsDatasource implements NewsDatasource {
   final SocialService _socialService;
 
   OnlineNewsDatasource(this._socialService);
-
-  @override
 
   /// Get all news from this sources:
   /// - Flutter github repository
@@ -19,6 +19,7 @@ class OnlineNewsDatasource implements NewsDatasource {
   /// - Dart Medium
   /// - Flutter Youtube channel
   /// And put in unique list, order by ascendant date
+  @override
   Future<List<NewsItemModel>> getAllNews() async {
     _socialService.init();
     final githubReleases =

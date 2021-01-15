@@ -1,10 +1,11 @@
+import 'package:injectable/injectable.dart';
 import 'package:spotify/spotify.dart';
 
 import 'secret_service.dart';
 
-class SpotifyService extends SpotifyApiBase {
+@Injectable()
+class SpotifyService {
   static SpotifyApi _spotifyApi;
-  SpotifyService(SpotifyApiCredentials credentials) : super(credentials);
 
   Future<SpotifyApi> get spotifyApi async {
     if (_spotifyApi != null) return _spotifyApi;

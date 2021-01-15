@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+import 'config/locator.dart';
 import 'core/router/router.dart';
 
 Future<void> main() async {
+  setupLocator();
   runApp(MyApp());
 }
 

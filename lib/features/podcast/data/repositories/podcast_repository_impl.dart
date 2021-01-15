@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/podcast_repository.dart';
 import '../datasources/podcast_datasource.dart';
@@ -6,6 +7,7 @@ import '../models/episode_model.dart';
 import '../models/episode_references_model.dart';
 import '../models/podcast_info_model.dart';
 
+@Injectable(as: PodcastRepository)
 class PodcastRepositoryImpl implements PodcastRepository {
   final PodcastDatasource _datasource;
 

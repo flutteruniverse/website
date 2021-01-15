@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/news.dart';
 import '../../domain/repositories/news_repository.dart';
 import '../datasources/news_datasource.dart';
 
+@Injectable(as: NewsRepository)
 class NewsRepositoryImpl implements NewsRepository {
   final NewsDatasource _datasource;
 
