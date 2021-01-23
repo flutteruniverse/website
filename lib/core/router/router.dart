@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 
 import '../../features/settings/presenter/pages/settings.dart';
 import '../pages/home_page.dart';
+import '../pages/layout_page.dart';
 import '../pages/unknown_page.dart';
 
 export 'router.gr.dart';
@@ -11,8 +12,9 @@ export 'router.gr.dart';
   routes: <AutoRoute>[
     AutoRoute(
       path: '/',
-      page: HomePage,
+      page: LayoutPage,
       children: [
+        AutoRoute(path: '', page: HomePage),
         AutoRoute(path: 'settings', page: SettingsPage),
       ],
     ),

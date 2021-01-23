@@ -7,7 +7,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:flutter_alien/flutter_alien.dart';
-import 'package:spotify/spotify.dart';
 
 import '../core/services/firebase_service.dart';
 import '../features/news/domain/usecases/get_all_news.dart';
@@ -36,18 +35,18 @@ GetIt $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   gh.lazySingleton<FirebaseService>(() => FirebaseService());
+  gh.factory<SocialService>(() => registerModule.socialService);
+  gh.factory<SpotifyService>(() => registerModule.spotifyService);
+  gh.factory<NewsDatasource>(() => OnlineNewsDatasource(get<SocialService>()));
+  gh.factory<NewsRepository>(() => NewsRepositoryImpl(get<NewsDatasource>()));
   gh.factory<PodcastDatasource>(() =>
-      OnlinePodcastDatasource(get<SpotifyApiBase>(), get<FirebaseService>()));
+      OnlinePodcastDatasource(get<SpotifyService>(), get<FirebaseService>()));
   gh.factory<PodcastRepository>(
       () => PodcastRepositoryImpl(get<PodcastDatasource>()));
-  gh.factory<SocialService>(() => registerModule.socialService);
-  gh.factory<SpotifyService>(() => SpotifyService());
+  gh.factory<GetAllNews>(() => GetAllNewsImpl(get<NewsRepository>()));
   gh.factory<GetEpisodes>(() => GetEpisodesImpl(get<PodcastRepository>()));
   gh.factory<GetInfo>(() => GetInfoImpl(get<PodcastRepository>()));
   gh.factory<GetLinks>(() => GetLinksImpl(get<PodcastRepository>()));
-  gh.factory<NewsDatasource>(() => OnlineNewsDatasource(get<SocialService>()));
-  gh.factory<NewsRepository>(() => NewsRepositoryImpl(get<NewsDatasource>()));
-  gh.factory<GetAllNews>(() => GetAllNewsImpl(get<NewsRepository>()));
   return get;
 }
 

@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:spotify/spotify.dart';
-import 'package:spotify/src/spotify_mock.dart';
 import 'package:website/core/services/firebase_service.dart';
 import 'package:website/core/services/spotify_service.dart';
 import 'package:website/features/podcast/data/datasources/online_podcast_datasource.dart';
@@ -14,9 +12,7 @@ class SpotifyServiceMock extends Mock implements SpotifyService {}
 class FirebaseServiceMock extends Mock implements FirebaseService {}
 
 void main() {
-  final spotify = SpotifyApiMock(
-    SpotifyApiCredentials('clientId', 'clientSecret'),
-  );
+  final spotify = SpotifyServiceMock();
   final firebaseService = FirebaseServiceMock();
   final datasource = OnlinePodcastDatasource(spotify, firebaseService);
   // test('should return a list of result model', () async {

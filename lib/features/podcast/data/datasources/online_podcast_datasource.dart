@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:spotify/spotify.dart';
 
 import '../../../../core/services/firebase_service.dart';
+import '../../../../core/services/spotify_service.dart';
 import '../models/episode_model.dart';
 import '../models/episode_references_model.dart';
 import '../models/podcast_info_model.dart';
@@ -9,16 +9,16 @@ import 'podcast_datasource.dart';
 
 @Injectable(as: PodcastDatasource)
 class OnlinePodcastDatasource implements PodcastDatasource {
-  final SpotifyApiBase _spotifyService;
+  final SpotifyService _spotifyService;
   final FirebaseService _firebaseService;
 
   OnlinePodcastDatasource(this._spotifyService, this._firebaseService);
 
   @override
   Future<List<EpisodeModel>> getEpisodes(String showId) async {
+    final spotify = await _spotifyService.spotifyApi;
     try {
-      final pagingEpisodes =
-          _spotifyService.shows.episodes(showId, market: 'BR');
+      final pagingEpisodes = spotify.shows.episodes(showId, market: 'BR');
       final allEpisodes = await pagingEpisodes.all();
       return allEpisodes
           .map((episode) => EpisodeModel(
