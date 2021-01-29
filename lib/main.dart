@@ -95,14 +95,14 @@ class Background extends Sprite {
 
     /// generate stars
     List.generate(bigSize.toInt() * 2, (index) {
-      var tx = GameUtils.rndRange(0, bigSize * 2);
-      var ty = GameUtils.rndRange(0, bigSize * 2);
-      var tr = GameUtils.rndRange(1, 3);
+      var tx = Math.randomRange(0, bigSize * 2);
+      var ty = Math.randomRange(0, bigSize * 2);
+      var tr = Math.randomRange(1, 3);
 
       /// random blue shade
-      final blue = GameUtils.rndRangeInt(125, 255);
+      final blue = Math.randomRangeInt(125, 255);
       final color = Color.fromARGB(255, blue, blue, 255);
-      g.beginFill(color.value, GameUtils.rndRange(.25, 1));
+      g.beginFill(color.value, Math.randomRange(.25, 1));
       g.drawStar(tx, ty, 8, tr);
       g.endFill();
     });
@@ -113,7 +113,7 @@ class Background extends Sprite {
         duration: 8,
         scale: bg.scale < 1 ? 1.2 : 1,
         rotation: '.4',
-        skewX: GameUtils.rndRange(-.1, .1),
+        skewX: Math.randomRange(-.1, .1),
         ease: GEase.linear,
         onComplete: _twnBg,
       );
