@@ -20,7 +20,9 @@
   "scripts": {
     "release": "standard-version",
     "minimize": "node .tool/minimize.js",
-    "compare": "comparejson -e ./assets/i18n/*.json"
+    "compare": "comparejson -e ./assets/i18n/*.json",
+    "local": "fvm flutter build web -t lib/main_dev.dart && firebase emulators:start",
+    "staging": "fvm flutter build web -t lib/main_dev.dart && firebase hosting:channel:deploy staging --expires 1d"
   },
   "standard-version": {
     "skip": {
