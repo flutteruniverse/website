@@ -15,7 +15,7 @@ void main() {
               Release(
                 link: 'https',
                 version: '0.1.0',
-                updated: 'Tue, 08 Dec 2020 06:02:21 GMT',
+                updated: DateTime.now(),
               )
             ]));
     when(socialService.getYoutubeFeed('UCwXdFgeE9KYzlDdR7TG9cMw')).thenAnswer(
@@ -24,7 +24,7 @@ void main() {
               YoutubePost(
                 link: 'https',
                 title: 'youtube post',
-                pubDate: 'Tue, 08 Dec 2020 16:02:21 GMT',
+                pubDate: DateTime.now(),
               )
             ]));
     when(socialService.getMediumFeed('flutter')).thenAnswer((_) async =>
@@ -32,7 +32,7 @@ void main() {
           MediumPost(
             link: 'https',
             title: 'medium post flutter',
-            pubDate: 'Wed, 09 Dec 2020 16:02:21 GMT',
+            pubDate: DateTime.now(),
           )
         ]));
     when(socialService.getMediumFeed('dartlang')).thenAnswer((_) async =>
@@ -40,7 +40,7 @@ void main() {
           MediumPost(
             link: 'https',
             title: 'medium post dart',
-            pubDate: 'Wed, 09 Dec 2020 20:02:21 GMT',
+            pubDate: DateTime.now(),
           )
         ]));
 

@@ -34,7 +34,6 @@ class OnlineNewsDatasource implements NewsDatasource {
         .map((e) => NewsItemModel(
               title: e.version,
               link: e.link,
-              pubDate: e.updated,
               type: githubReleases.title,
             ))
         .toList());
