@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../main.dart';
 import '../router/router.dart';
 
 class SideMenuItem {
@@ -21,15 +23,23 @@ class LayoutPage extends StatelessWidget {
   Widget build(_) => AutoRouter(
         builder: (context, child) {
           return Material(
-            child: SizerUtil.deviceType == DeviceType.Mobile
-                ? SmallLayout(
-                    child: child,
-                    router: context.router,
-                  )
-                : LargeLayout(
-                    child: child,
-                    router: context.router,
-                  ),
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                SceneBuilderWidget(
+                  builder: () => SceneController(back: Background()),
+                ),
+                SizerUtil.deviceType == DeviceType.Mobile
+                    ? SmallLayout(
+                        child: child,
+                        router: context.router,
+                      )
+                    : LargeLayout(
+                        child: child,
+                        router: context.router,
+                      ),
+              ],
+            ),
           );
         },
       );
@@ -52,7 +62,8 @@ class LargeLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
+        Container(
+          color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
           width: 80.0.sp,
           child: Column(
             children: _sideMenuItems
