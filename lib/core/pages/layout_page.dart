@@ -46,11 +46,6 @@ class LargeLayout extends StatelessWidget {
       iconData: Icons.home,
       label: 'Home',
     ),
-    SideMenuItem(
-      destination: SettingsRoute(),
-      iconData: Icons.settings,
-      label: 'Settings',
-    )
   ];
 
   @override
