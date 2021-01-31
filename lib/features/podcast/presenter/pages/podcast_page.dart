@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/responsive_list.dart';
+import '../../../../shared/widgets/loading.dart';
 import '../../domain/entities/episode.dart';
 import '../controller/podcast_page_controller.dart';
 import '../widgets/episode_card.dart';
@@ -26,12 +27,15 @@ class _PodcastPageState extends State<PodcastPage> {
     return ValueListenableBuilder<List<Episode>>(
       valueListenable: _pageController.episodesList,
       builder: (context, value, child) {
-        return ResponsiveList(
-          child: value
-              .map((episodeItem) => EpisodeCard(
-                    episodeItem: episodeItem,
-                  ))
-              .toList(),
+        return LoadingWidget(
+          loading: _pageController.loading,
+          widget: ResponsiveList(
+            child: value
+                .map((episodeItem) => EpisodeCard(
+                      episodeItem: episodeItem,
+                    ))
+                .toList(),
+          ),
         );
       },
     );
