@@ -3,7 +3,7 @@ import '../../domain/entities/news.dart';
 class NewsItemModel extends NewsItem {
   final String type;
   final String imagePath;
-  final String pubDate;
+  final DateTime pubDate;
   final String title;
   final String link;
 

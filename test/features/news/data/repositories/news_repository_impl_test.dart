@@ -15,7 +15,7 @@ void main() {
               Release(
                 link: 'https',
                 version: '0.1.0',
-                updated: DateTime.now(),
+                updated: DateTime.now().subtract(Duration(days: 1)),
               )
             ]));
     when(socialService.getYoutubeFeed('UCwXdFgeE9KYzlDdR7TG9cMw')).thenAnswer(
@@ -24,7 +24,7 @@ void main() {
               YoutubePost(
                 link: 'https',
                 title: 'youtube post',
-                pubDate: DateTime.now(),
+                pubDate: DateTime.now().subtract(Duration(hours: 5)),
               )
             ]));
     when(socialService.getMediumFeed('flutter')).thenAnswer((_) async =>
@@ -32,7 +32,7 @@ void main() {
           MediumPost(
             link: 'https',
             title: 'medium post flutter',
-            pubDate: DateTime.now(),
+            pubDate: DateTime.now().subtract(Duration(hours: 1)),
           )
         ]));
     when(socialService.getMediumFeed('dartlang')).thenAnswer((_) async =>

@@ -32,10 +32,10 @@ class OnlineNewsDatasource implements NewsDatasource {
     var list = <NewsItemModel>[];
     list.addAll(githubReleases.releases
         .map((e) => NewsItemModel(
-              title: e.version,
-              link: e.link,
-              type: githubReleases.title,
-            ))
+            title: e.version,
+            link: e.link,
+            type: githubReleases.title,
+            pubDate: e.updated))
         .toList());
     list.addAll(
       _parsingPosts(mediumPostsDart.mediumPosts, mediumPostsDart.title),
@@ -45,9 +45,7 @@ class OnlineNewsDatasource implements NewsDatasource {
     );
     list.addAll(_parsingPosts(youtubeVideos.youtubePosts, youtubeVideos.title));
 
-    final formatter = DateFormat(r'''EEE, dd MMM yyyy hh:mm:ss Z''');
-    list.sort((a, b) =>
-        formatter.parse(b.pubDate).compareTo(formatter.parse(a.pubDate)));
+    list.sort((a, b) => b.pubDate.compareTo(a.pubDate));
     return Future.value(list);
   }
 
