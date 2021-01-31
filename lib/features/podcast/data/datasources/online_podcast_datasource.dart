@@ -21,14 +21,16 @@ class OnlinePodcastDatasource implements PodcastDatasource {
       final pagingEpisodes = spotify.shows.episodes(showId, market: 'BR');
       final allEpisodes = await pagingEpisodes.all();
       return allEpisodes
-          .map((episode) => EpisodeModel(
+          .map(
+            (episode) => EpisodeModel(
                 audioLink: episode.audioPreviewUrl,
                 description: episode.description,
                 episodeId: episode.id,
                 externalUrl: episode.externalUrls.spotify,
-                pubDate: episode.releaseDate.toString(),
+                pubDate: episode.releaseDate,
                 title: episode.name,
-              ))
+                imageUrl: episode.images[0].url),
+          )
           .toList();
     } on Exception catch (e) {
       throw UnimplementedError('Error to get Spotify podcast episodes: $e');

@@ -1,6 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
 
+import '../../../../shared/utils.dart';
+import '../../../../shared/widgets/image_builder.dart';
 import '../../domain/entities/episode.dart';
 
 class EpisodeCard extends StatelessWidget {
@@ -10,10 +14,40 @@ class EpisodeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Text(episodeItem.title),
-        subtitle: Text(episodeItem.pubDate.toString()),
-        onTap: () => launch(episodeItem.externalUrl),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8.0.sp),
+        onTap: () => openLink(episodeItem.externalUrl),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Container(
+              child: ImageBuilder(
+                url: episodeItem.imageUrl,
+                name: episodeItem.title,
+                key: Key(episodeItem.title),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.all(8.0.sp),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      episodeItem.title,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(DateFormat('EEE, d MMMM yyyy')
+                        .format(episodeItem.pubDate)),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

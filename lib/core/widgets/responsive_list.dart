@@ -10,11 +10,14 @@ class ResponsiveList extends StatelessWidget {
     return child.isNotEmpty
         ? ListView.builder(
             itemCount: child.length,
-            padding: EdgeInsets.all(10.0.w),
             itemBuilder: (context, index) => SizedBox(
-              width: 90.0.w,
-              height: 100.0.sp,
-              child: child[index],
+              width: 100.0.w,
+              height:
+                  SizerUtil.deviceType == DeviceType.Mobile ? 90.0.sp : 70.0.sp,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 8.0.sp),
+                child: child[index],
+              ),
             ),
           )
         : SizedBox(width: 90.0.w, height: 100.0.sp, child: Text('No data'));

@@ -4,11 +4,12 @@ import '../../domain/entities/episode.dart';
 
 class EpisodeModel extends Episode {
   final String title;
-  final String pubDate;
+  final DateTime pubDate;
   final String audioLink;
   final String description;
   final String externalUrl;
   final String episodeId;
+  final String imageUrl;
 
   const EpisodeModel({
     @required this.title,
@@ -17,5 +18,6 @@ class EpisodeModel extends Episode {
     @required this.description,
     @required this.externalUrl,
     @required this.episodeId,
+    @required this.imageUrl,
   });
 }

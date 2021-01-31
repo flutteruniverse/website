@@ -58,7 +58,7 @@ class LargeLayout extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: 240,
+          width: 80.0.sp,
           child: Column(
             children: _sideMenuItems
                 .map((item) => ListTile(
@@ -90,6 +90,9 @@ class SmallLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return child;
+    return Padding(
+      padding: EdgeInsets.all(16.0.sp),
+      child: child,
+    );
   }
 }

@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 
 import 'config/locator.dart';
 import 'core/router/router.dart';
+import 'core/theme.dart';
 
 Future<void> main() async {
   setupLocator();
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp.router(
             debugShowCheckedModeBanner: true,
             title: 'Universo Flutter | Debug',
+            theme: themeData,
             routerDelegate: appRouter.delegate(),
             routeInformationParser: appRouter.defaultRouteParser(),
             builder: (context, child) => child,
