@@ -1,5 +1,7 @@
 # Universo Flutter website
 
+**Where you find news and knowledge about Flutter**
+
 [![Releases](https://img.shields.io/github/v/release/flutteruniverse/website)](https://github.com/flutteruniverse/website/releases)
 [![Website online](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Funiversoflutter.com)](https://universoflutter.com)
 [![Paypal donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/deandreamatias)
@@ -9,6 +11,19 @@
 I made this website to share podcast Universo Flutter, news and resources, all about Flutter.
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
+
+## Roadmap 2021
+
+- Create podcast page
+- Create about page
+- Create resource page
+- Develop news integration
+- Implement news feature and page
+- Translate website to spanish and portuguese (more languanges are welcome)
+- Implement search feature and page
+- Implement settings featuare and page
+
+Get more info in [public Trello](https://trello.com/b/eKsVAvyv)
 
 ## Build and run
 
@@ -31,7 +46,7 @@ Run in debug mode :)
 
 ## Author
 
-- **Matias de Andrea** - Flutter developer and UI/UX designer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
+- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
 
 ## Contributing
 
