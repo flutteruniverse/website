@@ -64,7 +64,7 @@ class LargeLayout extends StatelessWidget {
       children: [
         Container(
           color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
-          width: 80.0.sp,
+          width: 25.0.w,
           child: Column(
             children: _sideMenuItems
                 .map((item) => ListTile(
@@ -80,7 +80,7 @@ class LargeLayout extends StatelessWidget {
         const VerticalDivider(thickness: 1, width: 1),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.all(16.0.sp),
+            padding: EdgeInsets.all(12.0.sp),
             child: child,
           ),
         ),
@@ -97,7 +97,7 @@ class SmallLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(16.0.sp),
+      padding: EdgeInsets.all(12.0.sp),
       child: child,
     );
   }
