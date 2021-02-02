@@ -2,13 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.2.0](https://github.com/flutteruniverse/website/compare/v0.1.0...v0.1.3) (2021-02-02)
+### [0.2.1](https://github.com/flutteruniverse/website/compare/v0.1.0...v0.2.1) (2021-02-02)
 
 
 ### Features
 
 * Add base routing ([1420118](https://github.com/flutteruniverse/website/commit/1420118f1c8715d3e12c05ad70b22564e960eb5f))
 * Add firebase service ([4b47980](https://github.com/flutteruniverse/website/commit/4b47980b5e462e0d7f31e9d47a59ac83ede89c06))
+* Add translations files ([b9dccf8](https://github.com/flutteruniverse/website/commit/b9dccf83cfcd85200221801cafa3ac4e47836799))
 * Change famility icons ([c66e0d5](https://github.com/flutteruniverse/website/commit/c66e0d56efddf2d49ceddefbd7df0d56047897ef))
 * Config dependency injection ([31a0a42](https://github.com/flutteruniverse/website/commit/31a0a42e17fe253b36d43c034dd20b0f07918872))
 * Create base responsive ([4a77f0a](https://github.com/flutteruniverse/website/commit/4a77f0a584cda4abd45cb33398d09b3a866262d3))
@@ -33,16 +34,3 @@ All notable changes to this project will be documented in this file. See [standa
 
 * Change type data from flutter_alien ([f399ca2](https://github.com/flutteruniverse/website/commit/f399ca29106938ffd3dbd00bfa4abb11a79de701))
 * Update schema json ([12941c6](https://github.com/flutteruniverse/website/commit/12941c6ef6112bbd7637b57150a463345380b62a))
-
-## 0.1.2 (2020-12-30)
-
-### Features
-
-* Add PWA and favicon config
-
-## 0.1.1 (2020-12-30)
-
-### Features
-
-* Implement background animation
-* Improve assets cache
