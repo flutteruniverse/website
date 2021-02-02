@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../main.dart';
 import '../router/router.dart';
+import '../widgets/background.dart';
 
 class SideMenuItem {
   final PageRouteInfo destination;

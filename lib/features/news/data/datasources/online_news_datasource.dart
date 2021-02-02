@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter_alien/flutter_alien.dart';
 import 'package:injectable/injectable.dart';
-import 'package:intl/intl.dart';
 
 import '../models/news_model.dart';
 import 'news_datasource.dart';
