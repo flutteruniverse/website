@@ -1,8 +1,8 @@
 name: Deploy app
 on:
-  create:
-    tags:
-      - 
+  push:
+    tags:        
+      - '*' 
 jobs: 
   deploy-app: 
     name: deploy app
