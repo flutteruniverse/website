@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/podcast_repository.dart';
 import '../datasources/podcast_datasource.dart';
@@ -6,6 +7,7 @@ import '../models/episode_model.dart';
 import '../models/episode_references_model.dart';
 import '../models/podcast_info_model.dart';
 
+@Injectable(as: PodcastRepository)
 class PodcastRepositoryImpl implements PodcastRepository {
   final PodcastDatasource _datasource;
 
@@ -32,9 +34,9 @@ class PodcastRepositoryImpl implements PodcastRepository {
   }
 
   @override
-  Future<PodcastInfoModel> getPodcastInfo(String showId) async {
+  Future<PodcastInfoModel> getPodcastInfo(String location) async {
     try {
-      return await _datasource.getPodcastInfo(showId);
+      return await _datasource.getPodcastInfo(location);
     } on Exception catch (e) {
       throw ErrorDescription('Error to get podcast info from datasource: $e');
     }

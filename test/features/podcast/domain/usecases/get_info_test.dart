@@ -12,7 +12,7 @@ void main() {
   test('shoud return a info podcast when call with not empty show id',
       () async {
     when(repository.getPodcastInfo('4AlxqGkkrqe0mfIx3Mi7Xt'))
-        .thenAnswer((_) async => PodcastInfo(platforms: []));
+        .thenAnswer((_) async => PodcastInfo(streamingServices: []));
 
     var info = await usecase('4AlxqGkkrqe0mfIx3Mi7Xt');
 

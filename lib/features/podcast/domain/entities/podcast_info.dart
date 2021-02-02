@@ -1,19 +1,19 @@
 class PodcastInfo {
-  final List<Platforms> platforms;
+  final List<StreamingService> streamingServices;
 
   PodcastInfo({
-    this.platforms,
+    this.streamingServices,
   });
 }
 
-class Platforms {
-  final String link;
-  final String name;
-  final String icon;
+class StreamingService {
+  final String url;
+  final String title;
+  final String imagePath;
 
-  Platforms({
-    this.link,
-    this.name,
-    this.icon,
+  StreamingService({
+    this.url,
+    this.title,
+    this.imagePath,
   });
 }

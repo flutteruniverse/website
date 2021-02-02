@@ -1,13 +1,12 @@
 {
   "name": "website",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Universo Flutter website",
   "main": "build/web/main.dart.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {},
   "devDependencies": {
     "@node-minify/babel-minify": "^6.1.0",
     "@node-minify/clean-css": "^6.1.0",
@@ -20,7 +19,10 @@
   "scripts": {
     "release": "standard-version",
     "minimize": "node .tool/minimize.js",
-    "compare": "comparejson -e ./assets/i18n/*.json"
+    "compare": "comparejson -e ./assets/i18n/*.json",
+    "build": "fvm flutter build web -t lib/main.dart",
+    "local": "firebase serve",
+    "staging": "firebase hosting:channel:deploy staging --expires 1d"
   },
   "standard-version": {
     "skip": {

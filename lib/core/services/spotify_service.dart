@@ -2,9 +2,16 @@ import 'package:spotify/spotify.dart';
 
 import 'secret_service.dart';
 
-class SpotifyService extends SpotifyApiBase {
+class SpotifyService {
+  SpotifyService._();
+
+  static SpotifyService _instance;
   static SpotifyApi _spotifyApi;
-  SpotifyService(SpotifyApiCredentials credentials) : super(credentials);
+
+  static SpotifyService get instance {
+    _instance ??= SpotifyService._();
+    return _instance;
+  }
 
   Future<SpotifyApi> get spotifyApi async {
     if (_spotifyApi != null) return _spotifyApi;

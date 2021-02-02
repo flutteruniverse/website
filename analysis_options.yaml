@@ -1,5 +1,12 @@
 include: package:effective_dart/analysis_options.yaml
 
+analyzer:
+  exclude:
+    - "lib/generated_plugin_registrant.dart"
+    - "lib/config/*.config.dart"
+    - "lib/core/router/*.gr.dart"
+    - "lib/config/env.dart"
+
 linter:
   rules:
     public_member_api_docs: false
