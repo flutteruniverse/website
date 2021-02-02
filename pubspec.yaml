@@ -1,6 +1,6 @@
 name: website
 description: Where you find news and knowledge about Flutter
-version: 0.2.0+4
+version: 0.2.1+5
 publish_to: none
 
 environment:
