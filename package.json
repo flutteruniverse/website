@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Universo Flutter website",
   "main": "build/web/main.dart.js",
   "directories": {
