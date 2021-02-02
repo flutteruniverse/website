@@ -7,7 +7,6 @@
     "lib": "lib",
     "test": "test"
   },
-  "dependencies": {},
   "devDependencies": {
     "@node-minify/babel-minify": "^6.1.0",
     "@node-minify/clean-css": "^6.1.0",
@@ -21,8 +20,9 @@
     "release": "standard-version",
     "minimize": "node .tool/minimize.js",
     "compare": "comparejson -e ./assets/i18n/*.json",
-    "local": "fvm flutter build web -t lib/main_dev.dart && firebase emulators:start",
-    "staging": "fvm flutter build web -t lib/main_dev.dart && firebase hosting:channel:deploy staging --expires 1d"
+    "build": "fvm flutter build web -t lib/main.dart",
+    "local": "firebase serve",
+    "staging": "firebase hosting:channel:deploy staging --expires 1d"
   },
   "standard-version": {
     "skip": {
