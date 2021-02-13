@@ -34,7 +34,7 @@ GetIt $initGetIt(
 }) {
   final gh = GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
-  gh.lazySingleton<FirebaseService>(() => FirebaseService());
+  gh.factory<FirebaseService>(() => FirebaseService());
   gh.factory<SocialService>(() => registerModule.socialService);
   gh.factory<SpotifyService>(() => registerModule.spotifyService);
   gh.factory<NewsDatasource>(() => OnlineNewsDatasource(get<SocialService>()));

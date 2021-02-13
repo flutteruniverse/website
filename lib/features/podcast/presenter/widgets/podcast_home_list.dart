@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/router/router.dart';
 import '../../../../core/widgets/responsive_list.dart';
 import '../../../../shared/widgets/loading.dart';
 import '../../domain/entities/episode.dart';
 import '../controller/podcast_controller.dart';
-import '../widgets/episode_card.dart';
+import 'episode_card.dart';
 
-class PodcastPage extends StatefulWidget {
-  PodcastPage({Key key}) : super(key: key);
+class PodcastHomeList extends StatefulWidget {
+  const PodcastHomeList({Key key}) : super(key: key);
 
   @override
-  _PodcastPageState createState() => _PodcastPageState();
+  _PodcastHomeListState createState() => _PodcastHomeListState();
 }
 
-class _PodcastPageState extends State<PodcastPage> {
+class _PodcastHomeListState extends State<PodcastHomeList> {
   final PodcastController _pageController = PodcastController();
 
   @override
@@ -30,7 +31,8 @@ class _PodcastPageState extends State<PodcastPage> {
         return LoadingWidget(
           loading: _pageController.loading,
           widget: ResponsiveList(
-            title: 'Episodes',
+            title: 'Podcast',
+            pageToNavigate: PodcastRoute(),
             list: value
                 .map((episodeItem) => EpisodeCard(
                       episodeItem: episodeItem,

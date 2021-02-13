@@ -52,6 +52,11 @@ class LargeLayout extends StatelessWidget {
       iconData: Icons.home,
       label: 'Home',
     ),
+    SideMenuItem(
+      destination: PodcastRoute(),
+      iconData: Icons.speaker,
+      label: 'Podcast',
+    ),
   ];
 
   @override

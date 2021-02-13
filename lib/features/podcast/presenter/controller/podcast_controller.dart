@@ -4,7 +4,7 @@ import '../../../../config/instance_factory.dart';
 import '../../domain/entities/episode.dart';
 import '../../domain/usecases/get_episodes.dart';
 
-class PodcastPageController {
+class PodcastController {
   final episodesList = ValueNotifier<List<Episode>>([]);
   final GetEpisodes _getEpisodes = InstanceFactory.get<GetEpisodes>();
   bool get loading => _loading;
