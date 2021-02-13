@@ -34,11 +34,12 @@ lib/config/env.dart
 .pub/
 /build/
 pubspec.lock
+lib/generated_plugin_registrant.dart
 
 # Web related
-lib/generated_plugin_registrant.dart
 package-lock.json
 node_modules/*
+web/firebase_config.js
 
 # Symbolication related
 app.*.symbols

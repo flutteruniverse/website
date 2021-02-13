@@ -1,12 +1,12 @@
 {
-    "name": "Universo Flutter | To find news and knowledge about Flutter",
+    "name": "Universo Flutter | Where you find news and knowledge about Flutter",
     "short_name": "Universo Flutter",
     "start_url": "/index.html",
     "scope": "/",
     "display": "minimal-ui",
     "background_color": "#212121",
     "theme_color": "#0175C2",
-    "description": "Universo Flutter | A website to find news and knowledge about Flutter, through podcast, articles, videos, releases and more",
+    "description": "Universo Flutter | A website where you find news and knowledge about Flutter, through podcast, articles, videos, releases and more",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
