@@ -4,7 +4,6 @@ import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
 import '../router/router.dart';
-import '../widgets/background.dart';
 
 class SideMenuItem {
   final PageRouteInfo destination;
@@ -26,9 +25,6 @@ class LayoutPage extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SceneBuilderWidget(
-                  builder: () => SceneController(back: Background()),
-                ),
                 SizerUtil.deviceType == DeviceType.Mobile
                     ? SmallLayout(
                         child: child,

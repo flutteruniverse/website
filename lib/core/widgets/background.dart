@@ -1,22 +1,23 @@
+import 'package:flutter/widgets.dart';
 import 'package:graphx/graphx.dart';
 
-class Background extends Sprite {
+class Background extends GSprite {
   double get sw => stage.stageWidth;
   double get sh => stage.stageHeight;
 
   @override
   void addedToStage() {
-    stage.color = 0xff212121;
+    stage.color = Color(0xff212121);
     stage.maskBounds = true;
     _buildStars();
   }
 
   void _buildStars() {
     var bigSize = sw >= sh ? sw : sh;
-    var bg = Shape();
+    var bg = GShape();
     addChild(bg);
     final g = bg.graphics;
-    g.beginFill(0x0).drawCircle(sw / 2, sh / 2, bigSize).endFill();
+    g.beginFill(Color(0x0)).drawCircle(sw / 2, sh / 2, bigSize).endFill();
 
     /// generate stars
     List.generate(bigSize.toInt() * 2, (index) {
@@ -27,7 +28,7 @@ class Background extends Sprite {
       /// random blue shade
       final blue = Math.randomRangeInt(125, 255);
       final color = Color.fromARGB(255, blue, blue, 255);
-      g.beginFill(color.value, Math.randomRange(.25, 1));
+      g.beginFill(color);
       g.drawStar(tx, ty, 8, tr);
       g.endFill();
     });
