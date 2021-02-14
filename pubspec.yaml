@@ -12,6 +12,7 @@ dependencies:
   auto_route: ^1.0.0-beta.6
   cached_network_image: ^2.5.0
   cloud_firestore: ^0.14.4
+  fab_circular_menu: ^1.0.1
   firebase_core: ^0.5.3
   flutter_alien: ^0.1.2
   get_it: ^5.0.4
