@@ -16,14 +16,14 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 
 ## Roadmap 2021
 
-- Create podcast page
-- Create about page
-- Create resource page
-- Develop news integration
-- Implement news feature and page
-- Translate website to spanish and portuguese (more languanges are welcome)
-- Implement search feature and page
-- Implement settings featuare and page
+- [x] Create podcast page
+- [ ] Create about page
+- [ ] Create resource page
+- [ ] Develop news integration
+- [ ] Implement news feature and page
+- [ ] Translate website to spanish and portuguese (more languanges are welcome)
+- [ ] Implement search feature and page
+- [ ] Implement settings featuare and page
 
 Get more info in [public Trello](https://trello.com/b/eKsVAvyv)
 

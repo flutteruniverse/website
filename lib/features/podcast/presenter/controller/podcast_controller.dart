@@ -2,18 +2,32 @@ import 'package:flutter/cupertino.dart';
 
 import '../../../../config/instance_factory.dart';
 import '../../domain/entities/episode.dart';
+import '../../domain/entities/podcast_info.dart';
 import '../../domain/usecases/get_episodes.dart';
+import '../../domain/usecases/get_info.dart';
 
 class PodcastController {
   final episodesList = ValueNotifier<List<Episode>>([]);
+  final streamming =
+      ValueNotifier<PodcastInfo>(PodcastInfo(streamingServices: []));
   final GetEpisodes _getEpisodes = InstanceFactory.get<GetEpisodes>();
-  bool get loading => _loading;
+  final GetInfo _getInfo = InstanceFactory.get<GetInfo>();
+  bool get loadingEpisodes => _loadingEpisodes;
+  bool get loadingInfo => _loadingInfo;
 
-  bool _loading = false;
+  bool _loadingEpisodes = true;
+  bool _loadingInfo = true;
+
+  void getPageData() async {
+    _loadingInfo = true;
+    streamming.value = await _getInfo('assets/json/streamings.json');
+    _loadingInfo = false;
+    await getListEpisodes();
+  }
 
   void getListEpisodes() async {
-    _loading = true;
+    _loadingEpisodes = true;
     episodesList.value = await _getEpisodes('4AlxqGkkrqe0mfIx3Mi7Xt');
-    _loading = false;
+    _loadingEpisodes = false;
   }
 }

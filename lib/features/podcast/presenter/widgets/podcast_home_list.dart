@@ -29,8 +29,8 @@ class _PodcastHomeListState extends State<PodcastHomeList> {
       valueListenable: _pageController.episodesList,
       builder: (context, value, child) {
         return LoadingWidget(
-          loading: _pageController.loading,
-          widget: ResponsiveList(
+          loading: _pageController.loadingEpisodes,
+          child: ResponsiveList(
             title: 'Podcast',
             pageToNavigate: PodcastRoute(),
             list: value

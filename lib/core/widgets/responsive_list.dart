@@ -36,25 +36,46 @@ class ResponsiveList extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-          child: list.isNotEmpty
-              ? ListView.builder(
-                  itemCount: list.length,
-                  itemBuilder: (context, index) => SizedBox(
-                    width: 100.0.w,
-                    height: SizerUtil.deviceType == DeviceType.Mobile
-                        ? 90.0.sp
-                        : 70.0.sp,
-                    child: Padding(
-                      padding: EdgeInsets.only(bottom: 8.0.sp),
-                      child: list[index],
-                    ),
-                  ),
-                )
-              : SizedBox(
-                  width: 90.0.w, height: 100.0.sp, child: Text('No data')),
-        ),
+        list.length == 1
+            ? ResponsiveCard(list: list)
+            : Expanded(
+                child: list.isNotEmpty
+                    ? ListView.builder(
+                        itemCount: list.length,
+                        itemBuilder: (context, index) => ResponsiveCard(
+                          list: list,
+                          index: index,
+                        ),
+                      )
+                    : SizedBox(
+                        width: 90.0.w,
+                        height: 100.0.sp,
+                        child: Text('No data')),
+              ),
       ],
+    );
+  }
+}
+
+class ResponsiveCard extends StatelessWidget {
+  const ResponsiveCard({
+    Key key,
+    @required this.list,
+    this.index = 0,
+  }) : super(key: key);
+
+  final List<Widget> list;
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: SizerUtil.orientation == Orientation.portrait ? 100.0.w : null,
+      height: SizerUtil.deviceType == DeviceType.Mobile ? 90.0.sp : 70.0.sp,
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 8.0.sp),
+        child: list[index],
+      ),
     );
   }
 }

@@ -3,57 +3,57 @@
       {
           "title": "Spotify",
           "url": "https://open.spotify.com/show/4AlxqGkkrqe0mfIx3Mi7Xt",
-          "imagePath": "assets/img/spotify.png"
+          "image_path": "assets/img/spotify.png"
       },
       {
           "title": "Youtube",
           "url": "https://www.youtube.com/channel/UCATVEvL-QqDVPc_iFkbWkLQ",
-          "imagePath": "assets/img/youtube.png"
+          "image_path": "assets/img/youtube.png"
       },
       {
           "title": "Google podcasts",
           "url": "https://podcasts.google.com/?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy8xMjdjZDY0MC9wb2RjYXN0L3Jzcw",
-          "imagePath": "assets/img/google_podcasts.png"
+          "image_path": "assets/img/google_podcasts.png"
       },
       {
           "title": "Anchor",
           "url": "https://anchor.fm/universoflutter",
-          "imagePath": "assets/img/anchor.png"
+          "image_path": "assets/img/anchor.png"
       },
       {
           "title": "Apple podcasts",
           "url": "https://podcasts.apple.com/es/podcast/universo-flutter/id1503914248",
-          "imagePath": "assets/img/apple_podcasts.png"
+          "image_path": "assets/img/apple_podcasts.png"
       },
       {
           "title": "Deezer",
           "url": "https://www.deezer.com/en/show/971542",
-          "imagePath": "assets/img/deezer.png"
+          "image_path": "assets/img/deezer.png"
       },
       {
           "title": "Pocket Casts",
           "url": "https://pca.st/zyukjgs4",
-          "imagePath": "assets/img/pocket_casts.png"
+          "image_path": "assets/img/pocket_casts.png"
       },
       {
           "title": "Castbox",
           "url": "https://castbox.fm/channel/id2704756?utm_source=podcaster&utm_medium=dlink&utm_campaign=c_2704756&utm_content=Universo%20Flutter-CastBox_FM",
-          "imagePath": "assets/img/castbox.png"
+          "image_path": "assets/img/castbox.png"
       },
       {
           "title": "RadioPublic",
           "url": "https://radiopublic.com/universo-flutter-GKRr5v",
-          "imagePath": "assets/img/radiopublic.png"
+          "image_path": "assets/img/radiopublic.png"
       },
       {
           "title": "Overcast",
           "url": "https://overcast.fm/itunes1503914248/universo-flutter",
-          "imagePath": "assets/img/overcast.png"
+          "image_path": "assets/img/overcast.png"
       },
       {
           "title": "Breaker",
           "url": "https://www.breaker.audio/universo-flutter",
-          "imagePath": "assets/img/breaker.png"
+          "image_path": "assets/img/breaker.png"
       }
     ]
   }
