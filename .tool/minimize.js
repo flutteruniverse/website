@@ -48,16 +48,16 @@ minify({
     }
 });
 
-// minify({
-//     compressor: jsonminify,
-//     input: 'build/web/assets/assets/i18n/en.json',
-//     output: 'build/web/assets/assets/i18n/en.json',
-//     callback: function (err, min) {
-//         if (err) {
-//             console.log('Error to minify en.json. ', err);
-//         }
-//     }
-// });
+minify({
+    compressor: jsonminify,
+    input: 'build/web/assets/assets/json/streamings.json',
+    output: 'build/web/assets/assets/json/streamings.json',
+    callback: function (err, min) {
+        if (err) {
+            console.log('Error to minify streamings.json. ', err);
+        }
+    }
+});
 // minify({
 //     compressor: jsonminify,
 //     input: 'build/web/assets/assets/i18n/es.json',
