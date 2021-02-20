@@ -1,6 +1,7 @@
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/services/firebase_service.dart';
+import '../../../../core/services/local_assets_service.dart';
 import '../../../../core/services/spotify_service.dart';
 import '../models/episode_model.dart';
 import '../models/episode_references_model.dart';
@@ -11,8 +12,13 @@ import 'podcast_datasource.dart';
 class OnlinePodcastDatasource implements PodcastDatasource {
   final SpotifyService _spotifyService;
   final FirebaseService _firebaseService;
+  final LocalAssetsService _localAssetsService;
 
-  OnlinePodcastDatasource(this._spotifyService, this._firebaseService);
+  OnlinePodcastDatasource(
+    this._spotifyService,
+    this._firebaseService,
+    this._localAssetsService,
+  );
 
   @override
   Future<List<EpisodeModel>> getEpisodes(String showId) async {
@@ -54,12 +60,8 @@ class OnlinePodcastDatasource implements PodcastDatasource {
   Future<PodcastInfoModel> getPodcastInfo(String location) async {
     try {
       final streamingServiceDocuments =
-          await _firebaseService.getAllDocuments(location);
-      return PodcastInfoModel(
-        streamingServices: streamingServiceDocuments
-            .map((e) => StreamingServiceModel.fromMap(e.data()))
-            .toList(),
-      );
+          await _localAssetsService.getStreamingsJson(file: location);
+      return PodcastInfoModel.fromJson(streamingServiceDocuments);
     } on Exception catch (e) {
       throw UnimplementedError('Error to get podcast info: $e');
     }

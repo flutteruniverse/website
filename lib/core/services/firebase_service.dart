@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 /// Firestore official doc: https://firebase.flutter.dev/docs/firestore/usage/
 @Injectable()
 class FirebaseService {
-  static FirebaseFirestore _firestore;
+  FirebaseFirestore _firestore;
 
   Future<FirebaseFirestore> get firestore async {
     if (_firestore != null) return _firestore;

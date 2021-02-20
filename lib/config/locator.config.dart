@@ -13,6 +13,7 @@ import '../features/news/domain/usecases/get_all_news.dart';
 import '../features/podcast/domain/usecases/get_episodes.dart';
 import '../features/podcast/domain/usecases/get_info.dart';
 import '../features/podcast/domain/usecases/get_links.dart';
+import '../core/services/local_assets_service.dart';
 import '../features/news/data/datasources/news_datasource.dart';
 import '../features/news/domain/repositories/news_repository.dart';
 import '../features/news/data/repositories/news_repository_impl.dart';
@@ -35,12 +36,16 @@ GetIt $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   gh.factory<FirebaseService>(() => FirebaseService());
+  gh.factory<LocalAssetsService>(() => LocalAssetsService());
   gh.factory<SocialService>(() => registerModule.socialService);
   gh.factory<SpotifyService>(() => registerModule.spotifyService);
   gh.factory<NewsDatasource>(() => OnlineNewsDatasource(get<SocialService>()));
   gh.factory<NewsRepository>(() => NewsRepositoryImpl(get<NewsDatasource>()));
-  gh.factory<PodcastDatasource>(() =>
-      OnlinePodcastDatasource(get<SpotifyService>(), get<FirebaseService>()));
+  gh.factory<PodcastDatasource>(() => OnlinePodcastDatasource(
+        get<SpotifyService>(),
+        get<FirebaseService>(),
+        get<LocalAssetsService>(),
+      ));
   gh.factory<PodcastRepository>(
       () => PodcastRepositoryImpl(get<PodcastDatasource>()));
   gh.factory<GetAllNews>(() => GetAllNewsImpl(get<NewsRepository>()));
