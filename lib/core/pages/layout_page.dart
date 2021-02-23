@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
 import '../router/router.dart';
-import '../widgets/background.dart';
 
 class SideMenuItem {
   final PageRouteInfo destination;
@@ -26,9 +26,6 @@ class LayoutPage extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SceneBuilderWidget(
-                  builder: () => SceneController(back: Background()),
-                ),
                 SizerUtil.deviceType == DeviceType.Mobile
                     ? SmallLayout(
                         child: child,
@@ -55,6 +52,11 @@ class LargeLayout extends StatelessWidget {
       destination: HomeRoute(),
       iconData: Icons.home,
       label: 'Home',
+    ),
+    SideMenuItem(
+      destination: PodcastRoute(),
+      iconData: Icons.speaker,
+      label: 'Podcast',
     ),
   ];
 
@@ -96,9 +98,45 @@ class SmallLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(12.0.sp),
-      child: child,
+    // ignore: omit_local_variable_types
+    final GlobalKey<FabCircularMenuState> fabKey = GlobalKey();
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(16.0.sp),
+          child: child,
+        ),
+        Align(
+          alignment: Alignment.bottomLeft,
+          child: FabCircularMenu(
+            key: fabKey,
+            children: [
+              IconButton(
+                icon: Icon(Icons.speaker),
+                onPressed: () {
+                  fabKey.currentState.close();
+                  router.navigate(PodcastRoute());
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () {
+                  fabKey.currentState.close();
+                  router.navigate(HomeRoute());
+                },
+              ),
+            ],
+            alignment: Alignment.bottomLeft,
+            ringColor: Theme.of(context).colorScheme.primary.withOpacity(0.95),
+            fabMargin: const EdgeInsets.only(bottom: 32.0),
+            animationDuration: Duration(milliseconds: 400),
+            ringDiameter: 200,
+            ringWidth: 42,
+            fabSize: 56,
+          ),
+        )
+      ],
     );
   }
 }

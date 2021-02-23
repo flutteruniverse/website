@@ -1,0 +1,59 @@
+{
+    "streamings": [
+      {
+          "title": "Spotify",
+          "url": "https://open.spotify.com/show/4AlxqGkkrqe0mfIx3Mi7Xt",
+          "image_path": "assets/img/spotify.png"
+      },
+      {
+          "title": "Youtube",
+          "url": "https://www.youtube.com/channel/UCATVEvL-QqDVPc_iFkbWkLQ",
+          "image_path": "assets/img/youtube.png"
+      },
+      {
+          "title": "Google podcasts",
+          "url": "https://podcasts.google.com/?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy8xMjdjZDY0MC9wb2RjYXN0L3Jzcw",
+          "image_path": "assets/img/google_podcasts.png"
+      },
+      {
+          "title": "Anchor",
+          "url": "https://anchor.fm/universoflutter",
+          "image_path": "assets/img/anchor.png"
+      },
+      {
+          "title": "Apple podcasts",
+          "url": "https://podcasts.apple.com/es/podcast/universo-flutter/id1503914248",
+          "image_path": "assets/img/apple_podcasts.png"
+      },
+      {
+          "title": "Deezer",
+          "url": "https://www.deezer.com/en/show/971542",
+          "image_path": "assets/img/deezer.png"
+      },
+      {
+          "title": "Pocket Casts",
+          "url": "https://pca.st/zyukjgs4",
+          "image_path": "assets/img/pocket_casts.png"
+      },
+      {
+          "title": "Castbox",
+          "url": "https://castbox.fm/channel/id2704756?utm_source=podcaster&utm_medium=dlink&utm_campaign=c_2704756&utm_content=Universo%20Flutter-CastBox_FM",
+          "image_path": "assets/img/castbox.png"
+      },
+      {
+          "title": "RadioPublic",
+          "url": "https://radiopublic.com/universo-flutter-GKRr5v",
+          "image_path": "assets/img/radiopublic.png"
+      },
+      {
+          "title": "Overcast",
+          "url": "https://overcast.fm/itunes1503914248/universo-flutter",
+          "image_path": "assets/img/overcast.png"
+      },
+      {
+          "title": "Breaker",
+          "url": "https://www.breaker.audio/universo-flutter",
+          "image_path": "assets/img/breaker.png"
+      }
+    ]
+  }

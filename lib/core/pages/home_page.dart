@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../features/podcast/presenter/pages/podcast_page.dart';
+import '../../features/podcast/presenter/widgets/podcast_home_list.dart';
 import '../widgets/main_header.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,8 +10,8 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         MainHeader(),
-        SizedBox(height: 8.0.sp),
-        Expanded(child: PodcastPage()),
+        const SizedBox(height: 8.0),
+        Expanded(child: PodcastHomeList()),
       ],
     );
   }
