@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 import '../entities/news.dart';
 import '../repositories/news_repository.dart';
 
-// ignore: one_member_abstracts
 abstract class GetAllNews {
   Future<List<NewsItem>> call();
 }
