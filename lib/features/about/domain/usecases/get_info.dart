@@ -4,7 +4,7 @@ import '../entities/about.dart';
 import '../repositories/about_repository.dart';
 
 abstract class GetInfo {
-  About call();
+  Future<About> call(String location);
 }
 
 @Injectable(as: GetInfo)
@@ -14,7 +14,7 @@ class GetInfoImpl implements GetInfo {
   GetInfoImpl(this.repository);
 
   @override
-  About call() {
-    return repository.getInfo();
+  Future<About> call(String location) async {
+    return await repository.getInfo(location);
   }
 }

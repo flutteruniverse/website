@@ -33,11 +33,13 @@ class Contact {
     this.name,
     this.url,
     this.icon,
+    this.description,
   });
 
   final String name;
   final String url;
   final String icon;
+  final String description;
 }
 
 class Creator {

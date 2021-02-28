@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/about.dart';
@@ -11,7 +12,11 @@ class AboutRepositoryImpl implements AboutRepository {
   AboutRepositoryImpl(this._datasource);
 
   @override
-  About getInfo() {
-    return _datasource.getInfo();
+  Future<About> getInfo(String location) async {
+    try {
+      return await _datasource.getInfo(location);
+    } on Exception catch (e) {
+      throw ErrorDescription('Error to get about info from datasource: $e');
+    }
   }
 }

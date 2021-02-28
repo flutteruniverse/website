@@ -10,9 +10,9 @@ void main() {
   final repository = AboutRepositoryMock();
   final usecase = GetInfoImpl(repository);
   test('shoud return a info about when call usecase', () async {
-    when(repository.getInfo()).thenAnswer((_) => About());
+    when(repository.getInfo('location')).thenAnswer((_) async => About());
 
-    var info = await usecase();
+    var info = await usecase('location');
 
     expect(info, isA<About>());
   });
