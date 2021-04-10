@@ -1,5 +1,5 @@
 import '../entities/about.dart';
 
 abstract class AboutRepository {
-  Future<About> getInfo(String location);
+  Future<About> getAbout(String location);
 }

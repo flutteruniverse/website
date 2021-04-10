@@ -10,9 +10,9 @@ void main() {
   final datasource = AboutDatasourceMock();
   final repository = AboutRepositoryImpl(datasource);
   test('should return a about model', () async {
-    when(datasource.getInfo('location')).thenAnswer((_) async => AboutModel());
+    when(datasource.getAbout('location')).thenAnswer((_) async => AboutModel());
 
-    var aboutModel = await repository.getInfo('location');
+    var aboutModel = await repository.getAbout('location');
     expect(aboutModel, isA<AboutModel>());
   });
 }

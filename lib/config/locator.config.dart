@@ -8,11 +8,16 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:flutter_alien/flutter_alien.dart';
 
+import '../features/about/data/datasources/about_datasource.dart';
+import '../features/about/domain/repositories/about_repository.dart';
+import '../features/about/data/repositories/about_repository_impl.dart';
 import '../core/services/firebase_service.dart';
+import '../features/about/domain/usecases/get_about.dart';
 import '../features/news/domain/usecases/get_all_news.dart';
 import '../features/podcast/domain/usecases/get_episodes.dart';
 import '../features/podcast/domain/usecases/get_info.dart';
 import '../features/podcast/domain/usecases/get_links.dart';
+import '../features/about/data/datasources/local_about_datasource.dart';
 import '../core/services/local_assets_service.dart';
 import '../features/news/data/datasources/news_datasource.dart';
 import '../features/news/domain/repositories/news_repository.dart';
@@ -39,6 +44,11 @@ GetIt $initGetIt(
   gh.factory<LocalAssetsService>(() => LocalAssetsService());
   gh.factory<SocialService>(() => registerModule.socialService);
   gh.factory<SpotifyService>(() => registerModule.spotifyService);
+  gh.factory<AboutDatasource>(
+      () => LocalAboutDatasource(get<LocalAssetsService>()));
+  gh.factory<AboutRepository>(
+      () => AboutRepositoryImpl(get<AboutDatasource>()));
+  gh.factory<GetAbout>(() => GetAboutImpl(get<AboutRepository>()));
   gh.factory<NewsDatasource>(() => OnlineNewsDatasource(get<SocialService>()));
   gh.factory<NewsRepository>(() => NewsRepositoryImpl(get<NewsDatasource>()));
   gh.factory<PodcastDatasource>(() => OnlinePodcastDatasource(

@@ -12,9 +12,9 @@ class AboutRepositoryImpl implements AboutRepository {
   AboutRepositoryImpl(this._datasource);
 
   @override
-  Future<About> getInfo(String location) async {
+  Future<About> getAbout(String location) async {
     try {
-      return await _datasource.getInfo(location);
+      return await _datasource.getAbout(location);
     } on Exception catch (e) {
       throw ErrorDescription('Error to get about info from datasource: $e');
     }

@@ -12,7 +12,7 @@ class LocalAboutDatasource implements AboutDatasource {
     this._localAssetsService,
   );
   @override
-  Future<AboutModel> getInfo(String location) async {
+  Future<AboutModel> getAbout(String location) async {
     try {
       final about = await _localAssetsService.getJson(file: location);
       return AboutModel.fromJson(about);

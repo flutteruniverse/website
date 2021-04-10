@@ -13,7 +13,7 @@ void main() {
     when(localAssetsService.getJson(file: 'location')).thenAnswer((_) async =>
         Future.value('{\"social_media_list\":[], \"thanks_to\": []}'));
 
-    var aboutModel = await datasource.getInfo('location');
+    var aboutModel = await datasource.getAbout('location');
     expect(aboutModel, isA<AboutModel>());
   });
 }

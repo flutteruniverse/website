@@ -3,18 +3,18 @@ import 'package:injectable/injectable.dart';
 import '../entities/about.dart';
 import '../repositories/about_repository.dart';
 
-abstract class GetInfo {
+abstract class GetAbout {
   Future<About> call(String location);
 }
 
-@Injectable(as: GetInfo)
-class GetInfoImpl implements GetInfo {
+@Injectable(as: GetAbout)
+class GetAboutImpl implements GetAbout {
   final AboutRepository repository;
 
-  GetInfoImpl(this.repository);
+  GetAboutImpl(this.repository);
 
   @override
   Future<About> call(String location) async {
-    return await repository.getInfo(location);
+    return await repository.getAbout(location);
   }
 }
