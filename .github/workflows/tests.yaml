@@ -16,7 +16,7 @@ jobs:
         java-version: '8.x'
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'beta'
+        channel: 'stable'
     - name: get flutter dependencies
       run: flutter pub get
     - name: Generate env file
@@ -26,8 +26,6 @@ jobs:
       run: dart run .tool/env_service.dart
     - name: get node dependencies
       run: npm install
-    - name: enable flutter web
-      run: flutter config --enable-web
     - name: code analyze 
       run: flutter analyze
     - name: code test
