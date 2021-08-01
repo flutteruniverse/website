@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -71,7 +69,7 @@ class ResponsiveCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: SizerUtil.orientation == Orientation.portrait ? 100.0.w : null,
-      height: SizerUtil.deviceType == DeviceType.Mobile ? 90.0.sp : 70.0.sp,
+      height: SizerUtil.deviceType == DeviceType.mobile ? 90.0.sp : 70.0.sp,
       child: Padding(
         padding: EdgeInsets.only(bottom: 8.0.sp),
         child: list[index],

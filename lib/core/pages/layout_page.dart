@@ -26,7 +26,7 @@ class LayoutPage extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SizerUtil.deviceType == DeviceType.Mobile
+                SizerUtil.deviceType == DeviceType.mobile
                     ? SmallLayout(
                         child: child,
                         router: context.router,
