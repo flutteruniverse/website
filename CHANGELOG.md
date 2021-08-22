@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.0](https://github.com/flutteruniverse/website/compare/v0.3.0...v0.4.0) (2021-08-22)
+
+* Build website with Flutter 2.2
+* Fix CastBox link (Thanks @arthurdenner)
+
 ### [0.3.0](https://github.com/flutteruniverse/website/compare/v0.2.1...v0.3.0) (2021-02-23)
 
 * Create podcast page
