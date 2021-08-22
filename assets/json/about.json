@@ -1,0 +1,70 @@
+{
+    "about": "Universo Flutter tem como objetivo reunir notícias e conhecimentos sobre Flutter em um só lugar",
+    "privacy_policy": "privacy_policy",
+    "contact": {
+        "icon": "",
+        "name": "email",
+        "url": "mailto:universoflutter@gmail.com",
+        "description": "você pode entrar em contato com Univero Flutter por meio do email"
+    },
+    "creator": {
+        "description": "Matias de Andrea é um desenvolvedor mobile e criador de Universo Flutter",
+        "social_media_description": "você pode encontrar Matias nas seguintes redes sociais",
+        "social_media_list": [
+            {
+                "icon": "",
+                "name": "twitter",
+                "url": "https://twitter.com/deandreamatias"
+            },
+            {
+                "icon": "",
+                "name": "website",
+                "url": "https://deandreamatias.com"
+            },
+            {
+                "icon": "",
+                "name": "github",
+                "url": "https://github.com/deandreamatias"
+            }
+        ]
+    },
+    "social_media_list": [
+        {
+            "icon": "",
+            "name": "twitter",
+            "url": "https://twitter.com/deandreamatias"
+        },
+        {
+            "icon": "",
+            "name": "telegram",
+            "url": "https://t.me/universoflutter"
+        },
+        {
+            "icon": "",
+            "name": "github",
+            "url": "https://github.com/flutteruniverse"
+        }
+    ],
+    "thanks_to":[
+        {
+            "description": "esta é a fonte utilizada em toda a identidade de Universo Flutter",
+            "url": "https://www.latofonts.com/",
+            "name": "fonte Lato"
+        },
+        {
+            "description": "diferentes músicas instrumentais são utilizadas no inicio, interludios, fundo e fim do podcast",
+            "url": "https://about.me/jahzzar",
+            "name": "músicas de Jahzzar"
+        },
+        {
+            "description": "esta imagem é usada no fundo do logo de Universo Flutter",
+            "url": "https://twitter.com/boreganic",
+            "name": "fotografia do espaço por Jake Weirick"
+        },
+        {
+            "description": "os ícones de boxicons são utilizados por todo o site",
+            "url": "https://www.boxicons.com/",
+            "name": "ícones Boxicons"
+        }
+    ]
+}

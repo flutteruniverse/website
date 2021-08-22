@@ -35,7 +35,7 @@ void main() {
     expect(episodeList, isA<List<EpisodeReferencesModel>>());
   });
   test('should return a podcast info', () async {
-    when(localAssetsService.getStreamingsJson(file: 'streamings'))
+    when(localAssetsService.getJson(file: 'streamings'))
         .thenAnswer((_) async => Future.value('{\"streamings\":[]}'));
 
     var episodeList = await datasource.getPodcastInfo('streamings');

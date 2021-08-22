@@ -60,7 +60,7 @@ class OnlinePodcastDatasource implements PodcastDatasource {
   Future<PodcastInfoModel> getPodcastInfo(String location) async {
     try {
       final streamingServiceDocuments =
-          await _localAssetsService.getStreamingsJson(file: location);
+          await _localAssetsService.getJson(file: location);
       return PodcastInfoModel.fromJson(streamingServiceDocuments);
     } on Exception catch (e) {
       throw UnimplementedError('Error to get podcast info: $e');

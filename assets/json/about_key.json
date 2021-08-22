@@ -1,0 +1,76 @@
+{
+    "about": "about",
+    "privacy_policy": "privacy_policy",
+    "contact": {
+        "icon": "",
+        "name": "contact_email",
+        "url": "mailto:universoflutter@gmail.com",
+        "description": "contact_description"
+    },
+    "creator": {
+        "description": "creator_description",
+        "social_media_description": "creator_social_media_description",
+        "social_media_list": [
+            {
+                "icon": "",
+                "name": "creator_social_media_twitter_name",
+                "url": "https://twitter.com/deandreamatias",
+                "description": "creator_social_media_twitter_description"
+            },
+            {
+                "icon": "",
+                "name": "creator_social_media_website_name",
+                "url": "https://deandreamatias.com",
+                "description": "creator_social_media_website_description"
+            },
+            {
+                "icon": "",
+                "name": "creator_social_media_github_name",
+                "url": "https://github.com/deandreamatias",
+                "description": "creator_social_media_github_description"
+            }
+        ]
+    },
+    "social_media_list": [
+        {
+            "icon": "",
+            "name": "social_media_twitter_name",
+            "url": "https://twitter.com/deandreamatias",
+            "description": "social_media_twitter_description"
+        },
+        {
+            "icon": "",
+            "name": "social_media_telegram_name",
+            "url": "https://t.me/universoflutter",
+            "description": "social_media_telegram_description"
+        },
+        {
+            "icon": "",
+            "name": "social_media_github_name",
+            "url": "https://github.com/flutteruniverse",
+            "description": "social_media_github_description"
+        }
+    ],
+    "thanks_to":[
+        {
+            "description": "thanks_to_description_lato",
+            "url": "https://www.latofonts.com/",
+            "name": "thanks_to_name_lato"
+        },
+        {
+            "description": "thanks_to_description_music",
+            "url": "https://about.me/jahzzar",
+            "name": "thanks_to_name_music"
+        },
+        {
+            "description": "thanks_to_description_image",
+            "url": "https://twitter.com/boreganic",
+            "name": "thanks_to_name_image"
+        },
+        {
+            "description": "thanks_to_description_icons",
+            "url": "https://www.boxicons.com/",
+            "name": "thanks_to_name_icons"
+        }
+    ]
+}

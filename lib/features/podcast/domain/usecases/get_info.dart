@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 import '../entities/podcast_info.dart';
 import '../repositories/podcast_repository.dart';
 
-// ignore: one_member_abstracts
 abstract class GetInfo {
   Future<PodcastInfo> call(String showId);
 }
