@@ -28,7 +28,7 @@ class _PodcastPageState extends State<PodcastPage> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ResponsiveList(title: 'Where listen', list: [
+        ResponsiveList(title: 'Where to listen', list: [
           Card(
             child: Center(
               child: ValueListenableBuilder<PodcastInfo>(
