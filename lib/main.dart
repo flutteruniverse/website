@@ -15,22 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appRouter = AppRouter();
 
-    return LayoutBuilder(
-      builder: (context, constraints) =>
-          Sizer(builder: (context, orientation, deviceType) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            return MaterialApp.router(
-              title: '''Universo Flutter | 
+    return Sizer(
+      builder: (context, orientation, deviceType) => MaterialApp.router(
+        debugShowCheckedModeBanner: true,
+        title: '''Universo Flutter | 
                     Where you find news and knowledge about Flutter''',
-              theme: themeData,
-              routerDelegate: appRouter.delegate(),
-              routeInformationParser: appRouter.defaultRouteParser(),
-              builder: (context, child) => child,
-            );
-          },
-        );
-      }),
+        theme: themeData,
+        routerDelegate: appRouter.delegate(),
+        routeInformationParser: appRouter.defaultRouteParser(),
+        builder: (context, child) => child,
+      ),
     );
   }
 }

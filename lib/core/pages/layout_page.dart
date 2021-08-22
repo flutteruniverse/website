@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../shared/utils.dart';
 import '../router/router.dart';
 
 class SideMenuItem {
@@ -26,7 +27,7 @@ class LayoutPage extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                SizerUtil.deviceType == DeviceType.mobile
+                isExtraSmallScreen(context)
                     ? SmallLayout(
                         child: child,
                         router: context.router,
