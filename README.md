@@ -10,7 +10,7 @@ Where you find news and knowledge about Flutter
 
 ## About the project
 
-This website is building to share podcast Universo Flutter, news, resources and all about Flutter.
+This website is building to share podcast [Universo Flutter](https://anchor.fm/universoflutter), news, resources and all about Flutter.
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an multiplatform app from a single codebase.
 
@@ -25,7 +25,7 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 - [ ] Implement search feature and page
 - [ ] Implement settings featuare and page
 
-Get more info in [public Trello](https://trello.com/b/eKsVAvyv)
+**Roadmap in [public Trello](https://trello.com/b/eKsVAvyv)**
 
 ## Build and run
 
@@ -60,6 +60,11 @@ CLI Debug: `flutter run -t lib/main_dev.dart`
 ### Tests
 
 Unit tests: `flutter test --flavor dev`
+
+## Built with
+
+- [Flutter](https://flutter.dev/) - Build apps for any screen.
+- [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
 
 ## Author
 
