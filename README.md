@@ -12,7 +12,7 @@ Where you find news and knowledge about Flutter
 
 This website is building to share podcast Universo Flutter, news, resources and all about Flutter.
 
-This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
+This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an multiplatform app from a single codebase.
 
 ## Roadmap 2021
 
@@ -31,20 +31,12 @@ Get more info in [public Trello](https://trello.com/b/eKsVAvyv)
 
 ### Requirements
 
-- First, clone the repository with the 'git clone' command, or just download the zip.
-
-```shell
-git clone git@github.com:flutteruniverse/website.git
-```
-
-- Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
-
-- Install dependencies from pubspec.yaml by running `flutter packages get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
-
-- Create env.dart file running `dart run .tool/env_service.dart` and add your personal keys from differents source. Use keys from
-  - Spotify
-
-- Finally, config firebase to [Web installation](https://firebase.flutter.dev/docs/installation/web).
+1. Clone repository with 'git clone' command or just download the zip. `git clone git@github.com:flutteruniverse/website.git`
+2. Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
+3. Install dependencies from pubspec.yaml by running `flutter pub get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
+4. Create env.dart file running `dart run .tool/env_service.dart` and add your personal keys from differents source. Use keys from:
+   1. Spotify
+5. Finally, config firebase to [Web installation](https://firebase.flutter.dev/docs/installation/web).
 You need add your own file `firebase_config.js` into web folder with Firebase config, code below.
 
 ```javascript
@@ -71,7 +63,7 @@ Unit tests: `flutter test --flavor dev`
 
 ## Author
 
-- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
+- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) and [Twitter](https://twitter.com/deandreamatias).
 
 ## Contributing
 
