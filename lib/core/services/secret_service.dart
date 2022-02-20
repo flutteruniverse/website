@@ -2,8 +2,8 @@ import '../../config/env.dart';
 
 class SecretService {
   SecretService({
-    this.spotifyClientId,
-    this.spotifyClientSecret,
+    required this.spotifyClientId,
+    required this.spotifyClientSecret,
   });
   final String spotifyClientId;
   final String spotifyClientSecret;
@@ -15,10 +15,10 @@ class SecretService {
     );
   }
 
-  static SecretService _flavorService;
+  static SecretService? _flavorService;
   static SecretService get flavorService {
-    if (_flavorService != null) return _flavorService;
+    if (_flavorService != null) return _flavorService!;
     _flavorService = SecretService.fromJson(environment);
-    return _flavorService;
+    return _flavorService!;
   }
 }

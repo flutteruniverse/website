@@ -8,7 +8,10 @@ import '../../../../shared/widgets/image_builder.dart';
 import '../../domain/entities/episode.dart';
 
 class EpisodeCard extends StatelessWidget {
-  const EpisodeCard({Key key, this.episodeItem}) : super(key: key);
+  const EpisodeCard({
+    Key? key,
+    required this.episodeItem,
+  }) : super(key: key);
   final Episode episodeItem;
 
   @override
@@ -41,7 +44,7 @@ class EpisodeCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(DateFormat('EEE, d MMMM yyyy')
-                        .format(episodeItem.pubDate)),
+                        .format(episodeItem.pubDate ?? DateTime.now())),
                   ],
                 ),
               ),

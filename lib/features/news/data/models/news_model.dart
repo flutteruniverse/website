@@ -8,10 +8,16 @@ class NewsItemModel extends NewsItem {
   final String link;
 
   NewsItemModel({
-    this.type,
-    this.imagePath,
-    this.pubDate,
-    this.title,
-    this.link,
-  });
+    this.type = '',
+    this.imagePath = '',
+    required this.pubDate,
+    this.title = '',
+    this.link = '',
+  }) : super(
+          pubDate: pubDate,
+          imagePath: imagePath,
+          link: link,
+          title: title,
+          type: type,
+        );
 }

@@ -29,13 +29,14 @@ class OnlinePodcastDatasource implements PodcastDatasource {
       return allEpisodes
           .map(
             (episode) => EpisodeModel(
-                audioLink: episode.audioPreviewUrl,
-                description: episode.description,
-                episodeId: episode.id,
-                externalUrl: episode.externalUrls.spotify,
-                pubDate: episode.releaseDate,
-                title: episode.name,
-                imageUrl: episode.images[0].url),
+              audioLink: episode.audioPreviewUrl ?? '',
+              description: episode.description ?? '',
+              episodeId: episode.id ?? '',
+              externalUrl: episode.externalUrls?.spotify ?? '',
+              pubDate: episode.releaseDate,
+              title: episode.name ?? '',
+              imageUrl: episode.images?[0].url ?? '',
+            ),
           )
           .toList();
     } on Exception catch (e) {
@@ -47,10 +48,14 @@ class OnlinePodcastDatasource implements PodcastDatasource {
   Future<List<EpisodeReferencesModel>> getEpisodesReferences(
       String location) async {
     try {
-      final episodeDocuments = await _firebaseService.getAllDocuments(location);
-      return episodeDocuments
-          .map((e) => EpisodeReferencesModel.fromMap(e.data()))
-          .toList();
+      final episodeDocuments =
+          await _firebaseService.getAllDocuments<EpisodeReferencesModel>(
+        path: location,
+        dataFromJson: () =>
+            EpisodeReferencesModel(episode: 0, season: 0).toMap(),
+        dataToJson: (data) => EpisodeReferencesModel.fromMap(data),
+      );
+      return episodeDocuments.map((e) => e.data()).toList();
     } on Exception catch (e) {
       throw UnimplementedError('Error to get episode references: $e');
     }

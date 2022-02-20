@@ -8,7 +8,7 @@ import '../controller/podcast_controller.dart';
 import 'episode_card.dart';
 
 class PodcastHomeList extends StatefulWidget {
-  const PodcastHomeList({Key key}) : super(key: key);
+  const PodcastHomeList({Key? key}) : super(key: key);
 
   @override
   _PodcastHomeListState createState() => _PodcastHomeListState();

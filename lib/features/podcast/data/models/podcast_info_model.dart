@@ -6,18 +6,16 @@ class PodcastInfoModel extends PodcastInfo {
   final List<StreamingServiceModel> streamingServices;
 
   PodcastInfoModel({
-    this.streamingServices,
+    this.streamingServices = const [],
   });
 
   Map<String, dynamic> toMap() {
     return {
-      'streamings': streamingServices?.map((x) => x?.toMap())?.toList(),
+      'streamings': streamingServices.map((x) => x.toMap()).toList(),
     };
   }
 
   factory PodcastInfoModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return PodcastInfoModel(
       streamingServices: List<StreamingServiceModel>.from(
           map['streamings']?.map((x) => StreamingServiceModel.fromMap(x))),
@@ -36,9 +34,9 @@ class StreamingServiceModel extends StreamingService {
   final String imagePath;
 
   StreamingServiceModel({
-    this.url,
-    this.title,
-    this.imagePath,
+    this.url = '',
+    this.title = '',
+    this.imagePath = '',
   });
 
   Map<String, dynamic> toMap() {
@@ -50,8 +48,6 @@ class StreamingServiceModel extends StreamingService {
   }
 
   factory StreamingServiceModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return StreamingServiceModel(
       url: map['url'],
       title: map['title'],

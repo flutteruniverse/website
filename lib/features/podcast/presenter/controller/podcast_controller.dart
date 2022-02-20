@@ -25,7 +25,7 @@ class PodcastController {
     await getListEpisodes();
   }
 
-  void getListEpisodes() async {
+  Future<void> getListEpisodes() async {
     _loadingEpisodes = true;
     episodesList.value = await _getEpisodes('4AlxqGkkrqe0mfIx3Mi7Xt');
     _loadingEpisodes = false;

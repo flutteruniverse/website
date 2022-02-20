@@ -7,9 +7,9 @@ const String podcastCover = 'assets/img/podcast_cover.png';
 
 class ImageBuilder extends StatelessWidget {
   const ImageBuilder({
-    Key key,
-    @required this.url,
-    this.name,
+    Key? key,
+    required this.url,
+    this.name = '',
   }) : super(key: key);
 
   final String name;
@@ -28,9 +28,9 @@ class ImageBuilder extends StatelessWidget {
 
 class OnlineImage extends StatelessWidget {
   const OnlineImage({
-    Key key,
-    @required this.url,
-    @required this.name,
+    Key? key,
+    required this.url,
+    this.name = '',
   }) : super(key: key);
 
   final String url;
@@ -49,7 +49,7 @@ class OnlineImage extends StatelessWidget {
           child: CircularProgressIndicator(
             value: loadingProgress.expectedTotalBytes != null
                 ? loadingProgress.cumulativeBytesLoaded /
-                    loadingProgress.expectedTotalBytes
+                    (loadingProgress.expectedTotalBytes ?? 1)
                 : null,
           ),
         );
@@ -60,9 +60,9 @@ class OnlineImage extends StatelessWidget {
 
 class CachedImage extends StatelessWidget {
   const CachedImage({
-    Key key,
-    @required this.url,
-    @required this.name,
+    Key? key,
+    required this.url,
+    this.name = '',
   }) : super(key: key);
 
   final String url;
@@ -83,10 +83,4 @@ class CachedImage extends StatelessWidget {
   }
 }
 
-String _checkUrl(String url) {
-  return url != null
-      ? url.isNotEmpty
-          ? url
-          : podcastCover
-      : podcastCover;
-}
+String _checkUrl(String url) => url.isNotEmpty ? url : podcastCover;

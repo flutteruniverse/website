@@ -14,6 +14,7 @@ export 'router.gr.dart';
     AutoRoute(
       path: '/',
       page: LayoutPage,
+      initial: true,
       children: [
         AutoRoute(path: '', page: HomePage),
         AutoRoute(path: 'podcast', page: PodcastPage),

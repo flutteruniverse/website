@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:website/core/services/firebase_service.dart';
@@ -28,8 +27,11 @@ void main() {
   //   expect(episodeList, isA<List<EpisodeModel>>());
   // });
   test('should return a list of episodes references', () async {
-    when(firebaseService.getAllDocuments('episodes'))
-        .thenAnswer((_) async => <QueryDocumentSnapshot>[]);
+    when(firebaseService.getAllDocuments<EpisodeReferencesModel>(
+      path: 'episodes',
+      dataFromJson: () => {},
+      dataToJson: (p0) => EpisodeReferencesModel.fromMap(p0),
+    )).thenAnswer((_) async => []);
 
     var episodeList = await datasource.getEpisodesReferences('episodes');
     expect(episodeList, isA<List<EpisodeReferencesModel>>());

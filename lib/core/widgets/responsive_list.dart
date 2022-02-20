@@ -6,14 +6,14 @@ import '../../shared/utils.dart';
 
 class ResponsiveList extends StatelessWidget {
   const ResponsiveList({
-    Key key,
-    @required this.list,
-    @required this.title,
+    Key? key,
+    required this.list,
+    required this.title,
     this.pageToNavigate,
   }) : super(key: key);
   final List<Widget> list;
   final String title;
-  final PageRouteInfo pageToNavigate;
+  final PageRouteInfo? pageToNavigate;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class ResponsiveList extends StatelessWidget {
               if (pageToNavigate != null)
                 IconButton(
                   icon: Icon(Icons.arrow_forward_rounded),
-                  onPressed: () => context.router.navigate(pageToNavigate),
+                  onPressed: () => context.router.navigate(pageToNavigate!),
                 )
             ],
           ),
@@ -60,8 +60,8 @@ class ResponsiveList extends StatelessWidget {
 
 class ResponsiveCard extends StatelessWidget {
   const ResponsiveCard({
-    Key key,
-    @required this.list,
+    Key? key,
+    required this.list,
     this.index = 0,
   }) : super(key: key);
 

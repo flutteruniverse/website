@@ -12,9 +12,9 @@ class SideMenuItem {
   final String label;
 
   const SideMenuItem({
-    @required this.destination,
-    @required this.iconData,
-    @required this.label,
+    required this.destination,
+    required this.iconData,
+    required this.label,
   });
 }
 
@@ -43,7 +43,11 @@ class LayoutPage extends StatelessWidget {
 }
 
 class LargeLayout extends StatelessWidget {
-  LargeLayout({Key key, this.child, this.router}) : super(key: key);
+  LargeLayout({
+    Key? key,
+    required this.child,
+    required this.router,
+  }) : super(key: key);
   final Widget child;
   final StackRouter router;
 
@@ -72,7 +76,7 @@ class LargeLayout extends StatelessWidget {
                 .map((item) => ListTile(
                       leading: Icon(item.iconData),
                       selected:
-                          item.destination.routeName == router.current?.name,
+                          item.destination.routeName == router.current.name,
                       title: Text(item.label),
                       onTap: () => router.navigate(item.destination),
                     ))
@@ -92,7 +96,11 @@ class LargeLayout extends StatelessWidget {
 }
 
 class SmallLayout extends StatelessWidget {
-  const SmallLayout({Key key, this.child, this.router}) : super(key: key);
+  const SmallLayout({
+    Key? key,
+    required this.child,
+    required this.router,
+  }) : super(key: key);
   final Widget child;
   final StackRouter router;
 
@@ -115,14 +123,14 @@ class SmallLayout extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.speaker),
                 onPressed: () {
-                  fabKey.currentState.close();
+                  fabKey.currentState?.close();
                   router.navigate(PodcastRoute());
                 },
               ),
               IconButton(
                 icon: Icon(Icons.home),
                 onPressed: () {
-                  fabKey.currentState.close();
+                  fabKey.currentState?.close();
                   router.navigate(HomeRoute());
                 },
               ),

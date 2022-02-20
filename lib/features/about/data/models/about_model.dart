@@ -4,13 +4,20 @@ import '../../domain/entities/about.dart';
 
 class AboutModel extends About {
   AboutModel({
-    this.about,
-    this.socialMediaList,
-    this.contact,
-    this.creator,
-    this.thanksTo,
-    this.privacyPolicy,
-  });
+    this.about = '',
+    this.socialMediaList = const [],
+    required this.contact,
+    required this.creator,
+    this.thanksTo = const [],
+    this.privacyPolicy = '',
+  }) : super(
+          contact: contact,
+          creator: creator,
+          about: about,
+          privacyPolicy: privacyPolicy,
+          socialMediaList: socialMediaList,
+          thanksTo: thanksTo,
+        );
 
   final String about;
   final List<SocialMediaModel> socialMediaList;
@@ -22,17 +29,15 @@ class AboutModel extends About {
   Map<String, dynamic> toMap() {
     return {
       'about': about,
-      'social_media_list': socialMediaList?.map((x) => x?.toMap())?.toList(),
-      'contact': contact?.toMap(),
-      'creator': creator?.toMap(),
-      'thanks_to': thanksTo?.map((x) => x?.toMap())?.toList(),
+      'social_media_list': socialMediaList.map((x) => x.toMap()).toList(),
+      'contact': contact.toMap(),
+      'creator': creator.toMap(),
+      'thanks_to': thanksTo.map((x) => x.toMap()).toList(),
       'privacy_policy': privacyPolicy,
     };
   }
 
   factory AboutModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return AboutModel(
       about: map['about'],
       socialMediaList: List<SocialMediaModel>.from(
@@ -53,9 +58,9 @@ class AboutModel extends About {
 
 class SocialMediaModel extends SocialMedia {
   SocialMediaModel({
-    this.name,
-    this.url,
-    this.icon,
+    this.name = '',
+    this.url = '',
+    this.icon = '',
   });
 
   final String name;
@@ -71,8 +76,6 @@ class SocialMediaModel extends SocialMedia {
   }
 
   factory SocialMediaModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return SocialMediaModel(
       name: map['name'],
       url: map['url'],
@@ -87,7 +90,12 @@ class SocialMediaModel extends SocialMedia {
 }
 
 class ContactModel extends Contact {
-  ContactModel({this.name, this.url, this.icon, this.description});
+  ContactModel({
+    this.name = '',
+    this.url = '',
+    this.icon = '',
+    this.description = '',
+  });
 
   final String name;
   final String url;
@@ -104,8 +112,6 @@ class ContactModel extends Contact {
   }
 
   factory ContactModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return ContactModel(
       name: map['name'],
       url: map['url'],
@@ -122,9 +128,9 @@ class ContactModel extends Contact {
 
 class CreatorModel extends Creator {
   CreatorModel({
-    this.description,
-    this.socialMediaDescription,
-    this.socialMediaList,
+    this.description = '',
+    this.socialMediaDescription = '',
+    this.socialMediaList = const [],
   });
 
   final String description;
@@ -135,13 +141,11 @@ class CreatorModel extends Creator {
     return {
       'description': description,
       'social_media_description': socialMediaDescription,
-      'social_media_list': socialMediaList?.map((x) => x?.toMap())?.toList(),
+      'social_media_list': socialMediaList.map((x) => x.toMap()).toList(),
     };
   }
 
   factory CreatorModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return CreatorModel(
       description: map['description'],
       socialMediaDescription: map['social_media_description'],
@@ -158,9 +162,9 @@ class CreatorModel extends Creator {
 
 class ThanksToModel extends ThanksTo {
   ThanksToModel({
-    this.name,
-    this.url,
-    this.description,
+    this.name = '',
+    this.url = '',
+    this.description = '',
   });
 
   final String name;
@@ -176,8 +180,6 @@ class ThanksToModel extends ThanksTo {
   }
 
   factory ThanksToModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return ThanksToModel(
       name: map['name'],
       url: map['url'],

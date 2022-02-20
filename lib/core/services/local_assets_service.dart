@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @Injectable()
 class LocalAssetsService {
-  Future<String> getJson({String file}) async {
+  Future<String> getJson({required String file}) async {
     final jsonData = await rootBundle.loadString(file);
     return jsonData;
   }

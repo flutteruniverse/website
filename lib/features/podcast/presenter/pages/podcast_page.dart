@@ -9,7 +9,7 @@ import '../controller/podcast_controller.dart';
 import '../widgets/episode_card.dart';
 
 class PodcastPage extends StatefulWidget {
-  PodcastPage({Key key}) : super(key: key);
+  PodcastPage({Key? key}) : super(key: key);
 
   @override
   _PodcastPageState createState() => _PodcastPageState();

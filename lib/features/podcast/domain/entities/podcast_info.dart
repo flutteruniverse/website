@@ -2,7 +2,7 @@ class PodcastInfo {
   final List<StreamingService> streamingServices;
 
   PodcastInfo({
-    this.streamingServices,
+    this.streamingServices = const [],
   });
 }
 
@@ -12,8 +12,8 @@ class StreamingService {
   final String imagePath;
 
   StreamingService({
-    this.url,
-    this.title,
-    this.imagePath,
+    this.url = '',
+    this.title = '',
+    this.imagePath = '',
   });
 }

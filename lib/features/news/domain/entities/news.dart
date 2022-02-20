@@ -6,10 +6,10 @@ class NewsItem {
   final String link;
 
   NewsItem({
-    this.type,
-    this.imagePath,
-    this.pubDate,
-    this.title,
-    this.link,
+    this.type = '',
+    this.imagePath = '',
+    required this.pubDate,
+    this.title = '',
+    this.link = '',
   });
 }

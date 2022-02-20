@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: themeData,
         routerDelegate: appRouter.delegate(),
         routeInformationParser: appRouter.defaultRouteParser(),
-        builder: (context, child) => child,
+        builder: (context, child) => child ?? Container(),
       ),
     );
   }

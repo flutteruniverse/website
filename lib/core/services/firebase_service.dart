@@ -6,25 +6,51 @@ import 'package:injectable/injectable.dart';
 /// Firestore official doc: https://firebase.flutter.dev/docs/firestore/usage/
 @Injectable()
 class FirebaseService {
-  FirebaseFirestore _firestore;
+  FirebaseFirestore? _firestore;
 
-  Future<FirebaseFirestore> get firestore async {
+  Future<FirebaseFirestore?> get firestore async {
     if (_firestore != null) return _firestore;
     await Firebase.initializeApp();
     _firestore = FirebaseFirestore.instance;
     return _firestore;
   }
 
-  Future<CollectionReference> getCollection(String path) async {
-    return (await firestore).collection(path);
+  Future<CollectionReference<T>?> getCollection<T>({
+    required String path,
+    required T Function(Map<String, Object?>) dataToJson,
+    required Map<String, dynamic> Function() dataFromJson,
+  }) async {
+    return (await firestore)!.collection(path).withConverter<T>(
+          fromFirestore: (snapshot, _) => dataToJson(snapshot.data()!),
+          toFirestore: (value, _) => dataFromJson(),
+        );
   }
 
-  Future<List<QueryDocumentSnapshot>> getAllDocuments(String path) async {
-    return (await (await getCollection(path)).get()).docs;
+  Future<List<QueryDocumentSnapshot<T>>> getAllDocuments<T>({
+    required String path,
+    required Map<String, dynamic> Function() dataFromJson,
+    required T Function(Map<String, dynamic>) dataToJson,
+  }) async {
+    final collection = await getCollection<T>(
+      path: path,
+      dataFromJson: dataFromJson,
+      dataToJson: dataToJson,
+    );
+    final docs = await collection!.get();
+    return await docs.docs;
   }
 
-  Future<DocumentReference> addDocument(
-      String path, Map<String, String> data) async {
-    return (await getCollection(path)).add(data);
+  Future<DocumentReference> addDocument<T>({
+    required String path,
+    required T data,
+    required Map<String, dynamic> Function() dataFromJson,
+    required T Function(Map<String, dynamic>) dataToJson,
+  }) async {
+    final collection = await getCollection<T>(
+      path: path,
+      dataFromJson: dataFromJson,
+      dataToJson: dataToJson,
+    );
+    return collection!.add(data);
   }
 }

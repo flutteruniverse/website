@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({Key key, this.loading, this.child}) : super(key: key);
+  const LoadingWidget({
+    Key? key,
+    required this.loading,
+    required this.child,
+  }) : super(key: key);
   final bool loading;
   final Widget child;
 

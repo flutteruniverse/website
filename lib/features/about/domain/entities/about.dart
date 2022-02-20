@@ -1,11 +1,11 @@
 class About {
   About({
-    this.about,
-    this.socialMediaList,
-    this.contact,
-    this.creator,
-    this.thanksTo,
-    this.privacyPolicy,
+    this.about = '',
+    this.socialMediaList = const [],
+    required this.contact,
+    required this.creator,
+    this.thanksTo = const [],
+    this.privacyPolicy = '',
   });
 
   final String about;
@@ -18,9 +18,9 @@ class About {
 
 class SocialMedia {
   SocialMedia({
-    this.name,
-    this.url,
-    this.icon,
+    this.name = '',
+    this.url = '',
+    this.icon = '',
   });
 
   final String name;
@@ -30,10 +30,10 @@ class SocialMedia {
 
 class Contact {
   Contact({
-    this.name,
-    this.url,
-    this.icon,
-    this.description,
+    this.name = '',
+    this.url = '',
+    this.icon = '',
+    this.description = '',
   });
 
   final String name;
@@ -44,9 +44,9 @@ class Contact {
 
 class Creator {
   Creator({
-    this.description,
-    this.socialMediaDescription,
-    this.socialMediaList,
+    this.description = '',
+    this.socialMediaDescription = '',
+    this.socialMediaList = const [],
   });
 
   final String description;
@@ -56,9 +56,9 @@ class Creator {
 
 class ThanksTo {
   ThanksTo({
-    this.name,
-    this.url,
-    this.description,
+    this.name = '',
+    this.url = '',
+    this.description = '',
   });
 
   final String name;

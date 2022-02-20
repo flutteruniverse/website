@@ -8,22 +8,24 @@ class EpisodeReferencesModel extends EpisodeReferences {
   final List<ReferenceDetailsModel> references;
 
   EpisodeReferencesModel({
-    this.episode,
-    this.season,
-    this.references,
-  });
+    required this.episode,
+    required this.season,
+    this.references = const [],
+  }) : super(
+          episode: episode,
+          season: season,
+          references: references,
+        );
 
   Map<String, dynamic> toMap() {
     return {
       'episode': episode,
       'season': season,
-      'references': references?.map((x) => x?.toMap())?.toList(),
+      'references': references.map((x) => x.toMap()).toList(),
     };
   }
 
   factory EpisodeReferencesModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return EpisodeReferencesModel(
       episode: map['episode'],
       season: map['season'],
@@ -44,9 +46,9 @@ class ReferenceDetailsModel extends ReferenceDetails {
   final String title;
 
   ReferenceDetailsModel({
-    this.link,
-    this.type,
-    this.title,
+    this.link = '',
+    this.type = '',
+    this.title = '',
   });
 
   Map<String, String> toMap() {
@@ -58,8 +60,6 @@ class ReferenceDetailsModel extends ReferenceDetails {
   }
 
   factory ReferenceDetailsModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return ReferenceDetailsModel(
       link: map['link'],
       type: map['type'],

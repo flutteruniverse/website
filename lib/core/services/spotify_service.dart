@@ -5,18 +5,18 @@ import 'secret_service.dart';
 class SpotifyService {
   SpotifyService._();
 
-  static SpotifyService _instance;
-  static SpotifyApi _spotifyApi;
+  static SpotifyService? _instance;
+  static SpotifyApi? _spotifyApi;
 
   static SpotifyService get instance {
     _instance ??= SpotifyService._();
-    return _instance;
+    return _instance!;
   }
 
   Future<SpotifyApi> get spotifyApi async {
-    if (_spotifyApi != null) return _spotifyApi;
+    if (_spotifyApi != null) return _spotifyApi!;
     _spotifyApi = await _configCredentials();
-    return _spotifyApi;
+    return _spotifyApi!;
   }
 
   Future<SpotifyApi> _configCredentials() async {

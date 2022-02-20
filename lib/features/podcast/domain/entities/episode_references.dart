@@ -4,9 +4,9 @@ class EpisodeReferences {
   List<ReferenceDetails> references;
 
   EpisodeReferences({
-    this.episode,
-    this.season,
-    this.references,
+    required this.episode,
+    required this.season,
+    this.references = const [],
   });
 }
 
@@ -16,9 +16,9 @@ class ReferenceDetails {
   String title;
 
   ReferenceDetails({
-    this.link,
-    this.type,
-    this.title,
+    this.link = '',
+    this.type = '',
+    this.title = '',
   });
 }
 

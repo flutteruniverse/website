@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 class MainHeader extends StatelessWidget {
   const MainHeader({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
