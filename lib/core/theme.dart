@@ -35,7 +35,6 @@ final themeData = ThemeData(
     brightness: Brightness.dark,
   ),
   primaryColor: primaryColor,
-  accentColor: Colors.white,
   dialogBackgroundColor: darkGrey,
   backgroundColor: darkGrey,
   primarySwatch: const MaterialColor(0xFF07599d, primarySwatch),
