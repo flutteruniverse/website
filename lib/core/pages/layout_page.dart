@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:graphx/graphx.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../shared/utils.dart';
