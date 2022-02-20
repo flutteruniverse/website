@@ -7,8 +7,6 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
-//
-// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i7;
@@ -77,37 +75,32 @@ class AppRouter extends _i6.RootStackRouter {
       ];
 }
 
-/// generated route for
-/// [_i1.LayoutPage]
+/// generated route for [_i1.LayoutPage]
 class LayoutRoute extends _i6.PageRouteInfo<void> {
   const LayoutRoute({List<_i6.PageRouteInfo>? children})
-      : super(LayoutRoute.name, path: '/', initialChildren: children);
+      : super(name, path: '/', initialChildren: children);
 
   static const String name = 'LayoutRoute';
 }
 
-/// generated route for
-/// [_i2.UnknownPage]
+/// generated route for [_i2.UnknownPage]
 class UnknownRoute extends _i6.PageRouteInfo<void> {
-  const UnknownRoute() : super(UnknownRoute.name, path: '*');
+  const UnknownRoute() : super(name, path: '*');
 
   static const String name = 'UnknownRoute';
 }
 
-/// generated route for
-/// [_i3.HomePage]
+/// generated route for [_i3.HomePage]
 class HomeRoute extends _i6.PageRouteInfo<void> {
-  const HomeRoute() : super(HomeRoute.name, path: '');
+  const HomeRoute() : super(name, path: '');
 
   static const String name = 'HomeRoute';
 }
 
-/// generated route for
-/// [_i4.PodcastPage]
+/// generated route for [_i4.PodcastPage]
 class PodcastRoute extends _i6.PageRouteInfo<PodcastRouteArgs> {
   PodcastRoute({_i7.Key? key})
-      : super(PodcastRoute.name,
-            path: 'podcast', args: PodcastRouteArgs(key: key));
+      : super(name, path: 'podcast', args: PodcastRouteArgs(key: key));
 
   static const String name = 'PodcastRoute';
 }
@@ -123,10 +116,9 @@ class PodcastRouteArgs {
   }
 }
 
-/// generated route for
-/// [_i5.SettingsPage]
+/// generated route for [_i5.SettingsPage]
 class SettingsRoute extends _i6.PageRouteInfo<void> {
-  const SettingsRoute() : super(SettingsRoute.name, path: 'settings');
+  const SettingsRoute() : super(name, path: 'settings');
 
   static const String name = 'SettingsRoute';
 }
